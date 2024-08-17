@@ -13,14 +13,16 @@ public class Magnet : MonoBehaviour
     {
         var otherRb = other.attachedRigidbody;
 
-        if(otherRb)
+        if (otherRb)
         {
-            Vector3 dir = otherRb.position - rb.position;
+            Vector3 dir = otherRb.position - transform.position;
             float dirSq = Vector3.SqrMagnitude(dir);
             float force = strength * (1.0f / dirSq);
 
             otherRb.AddForce(-dir * force);
-            rb.AddForce(dir * force);
+
+            if (rb)
+                rb.AddForce(dir * force);
         }
     }
 }

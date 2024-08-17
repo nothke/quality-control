@@ -17,15 +17,10 @@ public class SlidingCrane : MonoBehaviour
     public Transform testTgt;
     public Vector3 target;
 
-    void Start()
-    {
-        yMotion.AccelerateTo(1);
-        xMotion.AccelerateTo(1);
-    }
-
     void Update()
     {
-        target = testTgt.position;
+        if (testTgt)
+            target = testTgt.position;
 
         Vector3 localTarget = transform.InverseTransformPoint(target);
         xMotion.Update(Time.deltaTime);
@@ -34,7 +29,6 @@ public class SlidingCrane : MonoBehaviour
         Vector2 targetPlanar = new Vector2(localTarget.x, localTarget.z);
 
         float xTgt = Mathf.InverseLerp(-xRange, xRange, targetPlanar.x);
-        Debug.Log(xTgt);
         float yTgt = Mathf.InverseLerp(0, yRange, targetPlanar.y);
 
         xMotion.AccelerateTo(xTgt);
