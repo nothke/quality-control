@@ -17,14 +17,14 @@ public class ProductDescription : ScriptableObject
     
     public GameObject GetRandomProduct()
     {
-        float randomValue = Random.value;
+        float randomValue = Random.Range(0, 100);
         float sum = 0;
         
         for (var i = 0; i < Products.Length; i++)
         {
             var product = Products[i];
 
-            sum += product.Probability / 100f;
+            sum += product.Probability;
             if (randomValue <= sum)
             {
                 return product.Prefab;
