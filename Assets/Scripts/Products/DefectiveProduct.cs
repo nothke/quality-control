@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DefectiveProduct : MonoBehaviour
+public class DefectiveProduct : Product
 {
     
 }
