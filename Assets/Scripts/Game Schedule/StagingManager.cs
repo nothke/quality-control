@@ -23,6 +23,8 @@ public class StagingManager: MonoBehaviour
         {
             Instance = this;
         }
+        
+        SetStage(StageEnum.Level1);
     }
 
     public void OnDestroy()
