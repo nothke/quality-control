@@ -11,6 +11,10 @@ public class ConveyorBelt : MonoBehaviour
 
     Vector3 startPosition;
 
+    float scrollingTextureProgress = 0;
+    public float scrollingTextureSpeedMult = 1;
+    public Renderer scrollingTextureRenderer;
+
     private void Start()
     {
         startPosition = rb.position;
@@ -21,5 +25,15 @@ public class ConveyorBelt : MonoBehaviour
         rb.position = startPosition;
         Vector3 targetSpeed = speed * transform.forward;
         rb.MovePosition(rb.position + targetSpeed * Time.deltaTime);
+    }
+
+    private void Update()
+    {
+        if(scrollingTextureRenderer)
+        {
+            scrollingTextureProgress += Time.deltaTime * speed * scrollingTextureSpeedMult;
+            scrollingTextureRenderer.material.SetTextureOffset("_MainTex", 
+                new Vector2(0, scrollingTextureProgress));
+        }
     }
 }
