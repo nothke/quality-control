@@ -52,7 +52,7 @@ public class CranePickDrop : MonoBehaviour
             magnet.strength = magnetStrength;
 
             crane.testTgt = handlingBody.transform;
-            if (Vector3.Distance(handlingBody.position, magnet.transform.position) < 1f)
+            if (magnet.IsCloseTo(handlingBody, 2f))
             {
                 crane.testTgt = dropTarget;
                 state = State.Tansporting;
