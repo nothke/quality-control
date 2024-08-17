@@ -16,11 +16,14 @@ public class CranePickDrop : MonoBehaviour
     {
         Idle,
         Catching,
+        WaitingToCatch,
         Tansporting,
         Finished,
     }
 
     public State state;
+
+    float timer = 0;
 
     public void OnTriggerEnterSignalReceived(EnterTriggerSender sender)
     {
@@ -29,6 +32,7 @@ public class CranePickDrop : MonoBehaviour
         if (otherRb && otherRb.isKinematic == false && state == State.Idle)
         {
             handlingBody = otherRb;
+            crane.testTgt = handlingBody.transform;
             state = State.Catching;
         }
     }
@@ -51,11 +55,22 @@ public class CranePickDrop : MonoBehaviour
 
             magnet.strength = magnetStrength;
 
-            crane.testTgt = handlingBody.transform;
             if (magnet.IsCloseTo(handlingBody, 2f))
             {
-                crane.testTgt = dropTarget;
+                crane.testTgt = null;
+
+                state = State.WaitingToCatch;
+                timer = 3;
+            }
+        }
+        else if (state == State.WaitingToCatch)
+        {
+            timer -= Time.deltaTime;
+
+            if (timer < 0)
+            {
                 state = State.Tansporting;
+                crane.testTgt = dropTarget;
             }
         }
 

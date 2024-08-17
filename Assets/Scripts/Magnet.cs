@@ -17,12 +17,13 @@ public class Magnet : MonoBehaviour
         {
             Vector3 dir = otherRb.position - transform.position;
             float dirSq = Vector3.SqrMagnitude(dir);
-            float force = strength * (1.0f / dirSq);
+            float forceMagnitude = strength * (1.0f / dirSq);
+            Vector3 force = dir.normalized * forceMagnitude;
 
-            otherRb.AddForce(-dir * force);
+            otherRb.AddForce(-force);
 
             if (rb)
-                rb.AddForce(dir * force);
+                rb.AddForce(force);
         }
     }
 }
