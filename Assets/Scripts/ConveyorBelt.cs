@@ -4,24 +4,36 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
+    Rigidbody _rb;
+    Rigidbody rb { get { if (!_rb) _rb = GetComponent<Rigidbody>(); return _rb; } }
+
     public float speed = 1;
 
-    List<ContactPoint> contactPoints = new List<ContactPoint>();
+    Vector3 startPosition;
 
-    private void OnCollisionStay(Collision collision)
+    float scrollingTextureProgress = 0;
+    public float scrollingTextureSpeedMult = 1;
+    public Renderer scrollingTextureRenderer;
+
+    private void Start()
     {
-        Vector3 targetSpeed = speed * Vector3.forward;
+        startPosition = rb.position;
+    }
 
-        Vector3 vel = collision.relativeVelocity;
+    private void FixedUpdate()
+    {
+        rb.position = startPosition;
+        Vector3 targetSpeed = speed * transform.forward;
+        rb.MovePosition(rb.position + targetSpeed * Time.deltaTime);
+    }
 
-        int count = collision.GetContacts(contactPoints);
-
-        if (collision.rigidbody)
+    private void Update()
+    {
+        if(scrollingTextureRenderer)
         {
-            for (int i = 0; i < count; i++)
-            {
-                
-            }
+            scrollingTextureProgress += Time.deltaTime * speed * scrollingTextureSpeedMult;
+            scrollingTextureRenderer.material.SetTextureOffset("_MainTex", 
+                new Vector2(0, scrollingTextureProgress));
         }
     }
 }
