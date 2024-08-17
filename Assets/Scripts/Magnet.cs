@@ -13,7 +13,7 @@ public class Magnet : MonoBehaviour
     {
         var otherRb = other.attachedRigidbody;
 
-        if (otherRb)
+        if (otherRb && otherRb.isKinematic == false)
         {
             Vector3 dir = otherRb.position - transform.position;
             float dirSq = Vector3.SqrMagnitude(dir);
