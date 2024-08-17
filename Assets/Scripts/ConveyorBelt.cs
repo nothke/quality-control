@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
+    Rigidbody _rb;
+    Rigidbody rb { get { if (!_rb) _rb = GetComponent<Rigidbody>(); return _rb; } }
+
     public float speed = 1;
 
-    List<ContactPoint> contactPoints = new List<ContactPoint>();
+    Vector3 startPosition;
 
-    private void OnCollisionStay(Collision collision)
+    private void Start()
     {
-        Vector3 targetSpeed = speed * Vector3.forward;
+        startPosition = rb.position;
+    }
 
-        Vector3 vel = collision.relativeVelocity;
-
-        int count = collision.GetContacts(contactPoints);
-
-        if (collision.rigidbody)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                
-            }
-        }
+    private void FixedUpdate()
+    {
+        rb.position = startPosition;
+        Vector3 targetSpeed = speed * transform.forward;
+        rb.MovePosition(rb.position + targetSpeed * Time.deltaTime);
     }
 }
