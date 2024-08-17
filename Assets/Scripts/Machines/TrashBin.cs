@@ -41,10 +41,6 @@ public class TrashBin : MonoBehaviour
             _cooldownTimer = CooldownDuration;
             _targetPosition = ClosedAnchor.position;
         }
-        else
-        {
-            rb.AddForce(5f * Vector3.up);
-        }
     }
 
     public void OnTriggerExit(Collider collider)
