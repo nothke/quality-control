@@ -37,8 +37,8 @@ public class WeightDetector : MonoBehaviour
         return totalMass;
     }
 
-    private void Update()
-    {
-        Debug.Log(GetTotalWeight());
-    }
+    //private void Update()
+    //{
+    //    Debug.Log(GetTotalWeight());
+    //}
 }
