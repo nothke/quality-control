@@ -15,14 +15,7 @@ public class ProductReceiver : MonoBehaviour
 
         if (product != null)
         {
-            if (product.Defect != DefectType.None)
-            {
-                defectiveProductCount++;
-            }
-            else
-            {
-                normalProductCount++;
-            }
+            Scoreboard.Instance.ScoreProduct(product);
             
             Destroy(product.gameObject);
         }

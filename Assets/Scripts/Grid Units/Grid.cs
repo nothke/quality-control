@@ -6,7 +6,6 @@ using quaternion = Unity.Mathematics.quaternion;
 
 public static class Grid
 {
-    
     public static float CellSize = 0.25f;
     public static float HalfCellSize => CellSize / 2;
     

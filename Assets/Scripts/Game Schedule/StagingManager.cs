@@ -8,6 +8,8 @@ public class StagingManager: MonoBehaviour
     public static StagingManager Instance;
     public static List<StageProp> StageProps;
 
+    public List<LevelObjective> Objectives;
+
     public StageEnum CurrentStage;
     
     [Flags]
@@ -63,13 +65,17 @@ public class StagingManager: MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
     [MenuItem("Tools/Staging/Level1")]
+#endif
     public static void SetStage1()
     {
         SetStage(StageEnum.Level1);
     }
-    
+
+#if UNITY_EDITOR
     [MenuItem("Tools/Staging/Level2")]
+#endif
     public static void SetStage2()
     {
         SetStage(StageEnum.Level2);
