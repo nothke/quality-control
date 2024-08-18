@@ -150,7 +150,7 @@ MonoBehaviour:
   DefectivePrefabVariants:
   - DefectType: 2048
     Prefab: {fileID: 5823832367352199241}
-  - DefectType: 3072
+  - DefectType: 1024
     Prefab: {fileID: 6807509591159707237}
 --- !u!114 &7230423446829384199
 MonoBehaviour:
@@ -230,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 4c6f4b5005eaee14b8214635df8d4049, type: 3}
+  - {fileID: 2100000, guid: 241446fb42920fe46b66d2b7e6127c28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -313,7 +313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 4c6f4b5005eaee14b8214635df8d4049, type: 3}
+  - {fileID: 2100000, guid: 241446fb42920fe46b66d2b7e6127c28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -396,7 +396,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 4c6f4b5005eaee14b8214635df8d4049, type: 3}
+  - {fileID: 2100000, guid: 241446fb42920fe46b66d2b7e6127c28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -10,17 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcf4ec4eb272446d850eb3c9e72cd87f, type: 3}
-  m_Name: Produced E
+  m_Name: Basic Torus
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 4275785426082247918, guid: 14d16caaceafb634f87449e796c4543a, type: 3}
+  Prefab: {fileID: 5301951847822309914, guid: d5cbaa49bd379dc49b90d9c38f02bf80, type: 3}
   normalClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 8218c8158aaf5fd48b6b1d0c452e50ca, type: 3}
   defectiveClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 88c1cb18e89f16a42b44301fca5b03be, type: 3}
   DefectProbabilities:
   - Defect: 0
     Probability: 50
-  - Defect: 1024
-    Probability: 25
-  - Defect: 2048
-    Probability: 25
+  - Defect: 1
+    Probability: 10
+  - Defect: 2
+    Probability: 10
+  - Defect: 4
+    Probability: 10
+  - Defect: 8
+    Probability: 10
+  - Defect: 16
+    Probability: 10

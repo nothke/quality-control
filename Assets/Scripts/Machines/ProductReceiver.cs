@@ -9,18 +9,11 @@ public class ProductReceiver : MonoBehaviour
     public int normalProductCount;
     public int defectiveProductCount;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider otherCollider)
     {
-        var rb = collision.rigidbody;
+        var product = otherCollider.GetComponentInParent<Product>();
 
-        if (!rb)
-        {
-            return;
-        }
-        
-        //enteredBodies.Add(rb);
-
-        if (rb.TryGetComponent(out Product product))
+        if (product != null)
         {
             if (product.Defect != DefectType.None)
             {
@@ -31,7 +24,7 @@ public class ProductReceiver : MonoBehaviour
                 normalProductCount++;
             }
             
-            Destroy(rb.gameObject);
+            Destroy(product.gameObject);
         }
     }
 }

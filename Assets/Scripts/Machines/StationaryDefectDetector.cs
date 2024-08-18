@@ -5,45 +5,28 @@ using UnityEngine.Events;
 
 public class StationaryDefectDetector : MonoBehaviour
 {
-    public UnityEvent AlarmEvent;
-
-    [Range(0, 100)]
-    public int FalsePositiveChance;
-    [Range(0, 100)]
-    public int FalseNegativeChance;
-    
     public List<Product> _knownProducts;
 
+    public AudioClip goodSound;
+    public AudioClip badSound;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out Product product))
+        var product = other.GetComponentInParent<Product>();
+
+        if (product == null)
         {
-            if (_knownProducts.Contains(product))
-            {
-                return;
-            }
-
-            _knownProducts.Add(product);
-
-            if (product.Defect == DefectType.None)
-            {
-                var falseNegativeRoll = Random.Range(0, 100);
-                
-                if (falseNegativeRoll > FalseNegativeChance)
-                {
-                    AlarmEvent.Invoke();
-                }
-            }
-            else
-            {
-                var falsePositiveRoll = Random.Range(0, 100);
-            
-                if (falsePositiveRoll < FalsePositiveChance)
-                {
-                    AlarmEvent.Invoke();
-                }
-            }
+            return;
         }
+         
+        if (_knownProducts.Contains(product))
+        {
+            return;
+        }
+
+        _knownProducts.Add(product);
+
+        NAudio.Play(product.Defect == DefectType.None ? goodSound : badSound, transform.position);
     }
 
     private void OnTriggerExit(Collider other)

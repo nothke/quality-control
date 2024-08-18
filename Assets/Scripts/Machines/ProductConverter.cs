@@ -10,8 +10,10 @@ public class Converter: MonoBehaviour
     public Transform outputPoint;
     public ProductType conversionProduct;
 
-    public bool isBroken;
-    public float conversionTime = 5f;
+    public int CurrentHealth;
+    public int MaxHealth;
+    
+    public float conversionDuration = 5f;
     private float _conversionTimer;
     
     public Transform refuseLauncher;
@@ -28,9 +30,15 @@ public class Converter: MonoBehaviour
         }
     }
 
+    public void Start()
+    {
+        _conversionTimer = conversionDuration;
+        CurrentHealth = MaxHealth;
+    }
+
     public void Update()
     {
-        if (isBroken)
+        if (CurrentHealth <= 0)
         {
             return;
         }
@@ -56,7 +64,7 @@ public class Converter: MonoBehaviour
                 inputProducts.RemoveAt(0);
             }
             
-            _conversionTimer = conversionTime;
+            _conversionTimer = conversionDuration;
         }
         
         _conversionTimer -= Time.deltaTime;

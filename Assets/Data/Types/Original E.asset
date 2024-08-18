@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Original E
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1892923323752838125, guid: 67d17fe30a51b794899db51da3f9fddb, type: 3}
+  normalClips:
+  - {fileID: 0}
+  defectiveClips:
+  - {fileID: 0}
+  DefectProbabilities: []
