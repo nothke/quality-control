@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf4ec4eb272446d850eb3c9e72cd87f, type: 3}
+  m_Name: Produced E
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 4275785426082247918, guid: 14d16caaceafb634f87449e796c4543a, type: 3}
+  DefectProbabilities:
+  - Defect: 0
+    Probability: 50
+  - Defect: 1024
+    Probability: 25
+  - Defect: 2048
+    Probability: 25

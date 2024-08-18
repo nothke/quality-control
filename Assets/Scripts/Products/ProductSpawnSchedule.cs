@@ -2,8 +2,8 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[CreateAssetMenu(fileName = "New Product Description", menuName = "Data/Product Description", order = 0)]
-public class ProductDescription : ScriptableObject
+[CreateAssetMenu(fileName = "New Product Spawn Schedule", menuName = "Data/Product Spawn Schedule", order = 0)]
+public class ProductSpawnSchedule : ScriptableObject
 {
     [Serializable]
     public struct Product

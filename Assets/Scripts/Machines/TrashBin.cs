@@ -24,14 +24,16 @@ public class TrashBin : MonoBehaviour
     
     public void OnTriggerEnter(Collider otherCollider)
     {
-        var rb = otherCollider.GetComponent<Rigidbody>();
+        var rb = otherCollider.GetComponentInParent<Rigidbody>();
 
         if (!rb)
         {
             return;
         }
 
-        if (otherCollider.TryGetComponent(out Product product))
+        var product = otherCollider.GetComponentInParent<Product>();
+        
+        if (product)
         {
             if (!enteredProducts.Contains(product))
             {
@@ -45,7 +47,9 @@ public class TrashBin : MonoBehaviour
 
     public void OnTriggerExit(Collider collider)
     {
-        if (collider.TryGetComponent(out Product product))
+        var product = collider.GetComponentInParent<Product>();
+        
+        if (product)
         {
             if (enteredProducts.Contains(product))
             {

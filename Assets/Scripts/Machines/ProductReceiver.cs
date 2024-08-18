@@ -19,16 +19,19 @@ public class ProductReceiver : MonoBehaviour
         }
         
         //enteredBodies.Add(rb);
-            
-        if (rb.GetComponent<DefectiveProduct>())
+
+        if (rb.TryGetComponent(out Product product))
         {
-            defectiveProductCount++;
-        }
-        else
-        {
-            normalProductCount++;
-        }
+            if (product.Defect != DefectType.None)
+            {
+                defectiveProductCount++;
+            }
+            else
+            {
+                normalProductCount++;
+            }
             
-        Destroy(rb.gameObject);
+            Destroy(rb.gameObject);
+        }
     }
 }
