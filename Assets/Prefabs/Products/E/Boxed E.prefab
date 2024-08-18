@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 6036007508636776569}
   - component: {fileID: 4275785426082247918}
   - component: {fileID: 8393139001085453593}
-  - component: {fileID: 7230423446829384199}
+  - component: {fileID: 6470434188345047876}
   m_Layer: 0
   m_Name: Boxed E
   m_TagString: Untagged
@@ -410,7 +410,7 @@ MonoBehaviour:
     Prefab: {fileID: 5823832367352199241}
   - DefectType: 1024
     Prefab: {fileID: 6807509591159707237}
---- !u!114 &7230423446829384199
+--- !u!114 &6470434188345047876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3486484010427172590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf9152fd8b7951445bef5e6f0778fd53, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f1ba88558d742b9a6f1c78794058aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
