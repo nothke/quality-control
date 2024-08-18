@@ -15,6 +15,11 @@ public class Magnet : MonoBehaviour
 
         if (otherRb && otherRb.isKinematic == false)
         {
+            if (!otherRb.GetComponent<Product>())
+            {
+                return;
+            }
+            
             Vector3 dir = otherRb.position - transform.position;
             float dirSq = Vector3.SqrMagnitude(dir);
             float forceMagnitude = strength * (1.0f / dirSq);
