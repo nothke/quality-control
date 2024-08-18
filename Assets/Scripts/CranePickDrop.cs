@@ -52,6 +52,7 @@ public class CranePickDrop : MonoBehaviour
         if (state == State.Catching)
         {
             Debug.Assert(handlingBody, this);
+            Debug.Assert(magnet, this);
 
             magnet.strength = magnetStrength;
 
