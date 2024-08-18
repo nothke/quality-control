@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StationaryDefectDetector : MonoBehaviour
+public class StationaryDefectDetector : MonoBehaviour, IResetable
 {
     public List<Product> _knownProducts;
 
     public AudioClip goodSound;
     public AudioClip badSound;
+
+    public void ResetMachine()
+    {
+        _knownProducts.Clear();
+    }
     
     private void OnTriggerEnter(Collider other)
     {

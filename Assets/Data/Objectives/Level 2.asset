@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65221132d7bd4e79856cce65eeb5ce58, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  Stage: 2
+  Quotas:
+  - Type: {fileID: 11400000, guid: 42240b227563f074aa0dd8fee3c0cb35, type: 2}
+    Quantity: 20
+  TimeLimit: 60
+  MaxDefectivePercentage: 80
+  SuccessMessage: Great job!
+  FailureMessage: Try again!

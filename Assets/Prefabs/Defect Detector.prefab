@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 8499163723211625772}
   - component: {fileID: 3988703939439567087}
   - component: {fileID: 9052827441617330997}
-  - component: {fileID: 8967374450020560052}
   m_Layer: 0
   m_Name: Defect Detector
   m_TagString: Untagged
@@ -312,19 +311,6 @@ MonoBehaviour:
   _knownProducts: []
   goodSound: {fileID: 8300000, guid: 8218c8158aaf5fd48b6b1d0c452e50ca, type: 3}
   badSound: {fileID: 8300000, guid: 88c1cb18e89f16a42b44301fca5b03be, type: 3}
---- !u!114 &8967374450020560052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8140899253408661228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c996d1be4ecb4e8d92bc4344f7f98854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Duration: 0
 --- !u!1 &8680690869305499051
 GameObject:
   m_ObjectHideFlags: 0

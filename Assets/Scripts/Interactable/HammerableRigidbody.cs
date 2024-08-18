@@ -6,6 +6,8 @@ public class HammerableRigidbody: RigidbodyInteractable
 {
     public override void Use(InteractionController im)
     {
+        manager = im;
+        
         if (im.hands.item == null)
         {
             base.Use(im);

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Converter: MonoBehaviour
+public class Converter: MonoBehaviour, IResetable
 {
+    public ProductSpawner Spawner;
     public List<Product> inputProducts;
 
     public ProductType expectedReagent;
@@ -32,8 +33,15 @@ public class Converter: MonoBehaviour
 
     public void Start()
     {
+        ResetMachine();
+    }
+
+    public void ResetMachine()
+    {
         _conversionTimer = conversionDuration;
         CurrentHealth = MaxHealth;
+        
+        inputProducts.Clear();
     }
 
     public void Update()
@@ -54,7 +62,7 @@ public class Converter: MonoBehaviour
             
             if (inputProducts[0].Type == expectedReagent)
             {
-                ProductType.SpawnProduct(conversionProduct, outputPoint);
+                Spawner.SpawnProduct(conversionProduct);
                 inputProducts.RemoveAt(0);
                 Destroy(currentProduct);
             }

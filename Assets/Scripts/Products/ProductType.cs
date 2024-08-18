@@ -20,9 +20,9 @@ public class ProductType : ScriptableObject
     
     public DefectProbability[] DefectProbabilities;
     
-    public static void SpawnProduct(ProductType type, Transform origin)
+    public static void SpawnProduct(ProductType type, Transform parent, Vector3 position, Quaternion rotation)
     {
-        var newProduct = Instantiate(type.Prefab, origin);
+        var newProduct = Instantiate(type.Prefab, position, rotation, parent);
         newProduct.Type = type;
         newProduct.ApplyDefect(type.SelectDefect());
     }
