@@ -18,6 +18,8 @@ public class ConveyorBelt : MonoBehaviour
     private void Start()
     {
         startPosition = rb.position;
+
+        scrollingTextureSpeedMult = -0.1625f * speed;
     }
 
     private void FixedUpdate()
