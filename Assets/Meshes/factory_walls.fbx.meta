@@ -3,7 +3,17 @@ guid: c2ce3873e817ee04ebb555cee2ef81c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hotspot_roof
+    second: {fileID: 2100000, guid: 912d9758bfcc8ac48a6abcd6bd32d706, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sample_hotspot
+    second: {fileID: -8880872108277426352, guid: e55c7926f60bef546b3c8625813ea92c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
