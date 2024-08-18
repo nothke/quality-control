@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2547041061673746692}
   - component: {fileID: 3271489653354074546}
   - component: {fileID: 6230516344177671089}
-  - component: {fileID: 4025835224586210870}
+  - component: {fileID: 1073089907330318869}
   m_Layer: 0
   m_Name: Crate_Defective
   m_TagString: Untagged
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54361f89cfee8b94d810c14a6beb11b5, type: 2}
+  - {fileID: 2100000, guid: 568b3806fe9d062479776cf082c0fd7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4025835224586210870
+--- !u!114 &1073089907330318869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8661871210265028242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b73befcbdd4bbfaaee667a8da86b1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 813c296fdd6145aeaa5dfd4a2b2ca423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Defect: 0

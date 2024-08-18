@@ -12,20 +12,20 @@ public class StationaryDefectDetector : MonoBehaviour
     [Range(0, 100)]
     public int FalseNegativeChance;
     
-    public List<Product> _detectedDefects;
+    public List<Product> _knownProducts;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Product product))
         {
-            if (_detectedDefects.Contains(product))
+            if (_knownProducts.Contains(product))
             {
                 return;
             }
 
-            _detectedDefects.Add(product);
+            _knownProducts.Add(product);
 
-            if (other.TryGetComponent(out DefectiveProduct defectiveProduct))
+            if (product.Defect == DefectType.None)
             {
                 var falseNegativeRoll = Random.Range(0, 100);
                 
@@ -48,11 +48,11 @@ public class StationaryDefectDetector : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out DefectiveProduct product))
+        if (other.TryGetComponent(out Product product))
         {
-            if (_detectedDefects.Contains(product))
+            if (_knownProducts.Contains(product))
             {
-                _detectedDefects.Remove(product);
+                _knownProducts.Remove(product);
             }
         }
     }

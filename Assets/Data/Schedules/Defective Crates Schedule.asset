@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a80c2e8703664de8943062f03eedfe17, type: 3}
-  m_Name: Crates
+  m_Name: Defective Crates Schedule
   m_EditorClassIdentifier: 
   Products:
-  - Prefab: {fileID: 8661871210265028242, guid: ca01f03442732704ba414883790643f7, type: 3}
-    Probability: 80
   - Prefab: {fileID: 8661871210265028242, guid: c150b9eb048821c47a8d6083804e00e0, type: 3}
-    Probability: 20
+    Probability: 100
