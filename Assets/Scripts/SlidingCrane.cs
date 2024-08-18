@@ -24,6 +24,7 @@ public class SlidingCrane : MonoBehaviour
     private void Start()
     {
         target = transform.position;
+        xMotion.progress = 0.5f;
     }
 
     void FixedUpdate()
@@ -51,6 +52,6 @@ public class SlidingCrane : MonoBehaviour
         yTransform.localPosition = new Vector3(0, 0, yMotion.progress * yRange);
         xTransform.localPosition = new Vector3(x, 0, 0);
 
-        cradleRb.MovePosition(cradleTransform.position);
+        //cradleRb.MovePosition(cradleTransform.position);
     }
 }
