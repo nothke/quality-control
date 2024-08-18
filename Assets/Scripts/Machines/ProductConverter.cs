@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Converter: MonoBehaviour, IResetable
 {
+    public ProductSpawner Spawner;
     public List<Product> inputProducts;
 
     public ProductType expectedReagent;
@@ -61,7 +62,7 @@ public class Converter: MonoBehaviour, IResetable
             
             if (inputProducts[0].Type == expectedReagent)
             {
-                ProductType.SpawnProduct(conversionProduct, outputPoint);
+                Spawner.SpawnProduct(conversionProduct);
                 inputProducts.RemoveAt(0);
                 Destroy(currentProduct);
             }
