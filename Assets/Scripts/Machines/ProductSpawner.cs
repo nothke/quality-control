@@ -14,7 +14,7 @@ public class ProductSpawner : MonoBehaviour
     public struct ProductionPhase
     {
         public ProductionPhaseType Type;
-        public ProductDescription Description;
+        public ProductType ProductType;
         [Min(1f)]
         public float Duration;
         [Min(1f)]
@@ -62,7 +62,7 @@ public class ProductSpawner : MonoBehaviour
 
             _spawnTimer = currentPhase.SpawnInterval;
         
-            Instantiate(currentPhase.Description.GetRandomProduct(), transform.position, Quaternion.identity);
+            ProductType.SpawnProduct(currentPhase.ProductType, transform);
         }
         
         if (_remainingDuration <= 0)

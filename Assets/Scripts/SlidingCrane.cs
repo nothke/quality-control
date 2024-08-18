@@ -11,15 +11,20 @@ public class SlidingCrane : MonoBehaviour
     public Transform xTransform;
     public Transform yTransform;
 
+
     public float yRange = 10;
     public float xRange = 5;
 
     public Transform testTgt;
     public Vector3 target;
 
+    public Rigidbody craneRail ;
+
     private void Start()
     {
         target = transform.position;
+
+
     }
 
     void Update()
@@ -29,7 +34,6 @@ public class SlidingCrane : MonoBehaviour
 
 
         Vector3 localTarget = transform.InverseTransformPoint(target);
-
 
         Vector2 targetPlanar = new Vector2(localTarget.x, localTarget.z);
 

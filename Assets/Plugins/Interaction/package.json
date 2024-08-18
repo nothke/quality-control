@@ -1,0 +1,8 @@
+{
+  "name": "nothke.interaction",
+  "displayName": "Nothke's Interaction",
+  "version": "1.0.0",
+  "unity": "2018.1",
+  "description": "Interaction",
+  "type": "library"
+}
