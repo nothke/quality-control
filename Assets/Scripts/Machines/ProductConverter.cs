@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Converter: MonoBehaviour
+public class Converter: MonoBehaviour, IResetable
 {
     public List<Product> inputProducts;
 
@@ -32,8 +32,15 @@ public class Converter: MonoBehaviour
 
     public void Start()
     {
+        ResetMachine();
+    }
+
+    public void ResetMachine()
+    {
         _conversionTimer = conversionDuration;
         CurrentHealth = MaxHealth;
+        
+        inputProducts.Clear();
     }
 
     public void Update()

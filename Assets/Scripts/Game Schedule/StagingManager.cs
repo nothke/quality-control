@@ -6,7 +6,6 @@ using UnityEngine;
 public class StagingManager: MonoBehaviour
 {
     public static StagingManager Instance;
-    public static List<StageProp> StageProps;
 
     public List<LevelObjective> Objectives;
 
@@ -15,8 +14,9 @@ public class StagingManager: MonoBehaviour
     [Flags]
     public enum StageEnum
     {
-        Level1 = 1,
-        Level2 = 2,
+        Level1 = 1 << 0,
+        Level2 = 1 << 1,
+        Level3 = 1 << 2,
     }
 
     public void OnEnable()
@@ -26,40 +26,15 @@ public class StagingManager: MonoBehaviour
             Instance = this;
         }
     }
-
-    public void OnDestroy()
-    {
-        StageProps.Clear();
-    }
-
-    public static void RegisterStageProp(StageProp stageProp)
-    {
-        if (StageProps == null)
-        {
-            StageProps = new List<StageProp>();
-        }
-
-        if (!StageProps.Contains(stageProp))
-        {
-            StageProps.Add(stageProp);
-        }
-    }
-    
-    public static void RemoveStageProp(StageProp stageProp)
-    {
-        if (StageProps.Contains(stageProp))
-        {
-            StageProps.Remove(stageProp);
-        }
-    }
     
     public static void SetStage(StageEnum stage)
     {
         Instance.CurrentStage = stage;
         
-        foreach (var stageProp in StageProps)
+        foreach (var stageProp in FindObjectsOfType<StageProp>(true))
         {
-            stageProp.gameObject.SetActive((stageProp.ActiveAtStages & stage) != 0);
+            Debug.Log(stageProp.ActiveAtStages.HasFlag(stage));
+            stageProp.gameObject.SetActive(stageProp.ActiveAtStages.HasFlag(stage));
         }
     }
 

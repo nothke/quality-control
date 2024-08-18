@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class Scoreboard: MonoBehaviour
@@ -14,18 +15,41 @@ public class Scoreboard: MonoBehaviour
     public bool _running;
 
     public TextMeshPro textMesh;
-    
-    public void Start()
+
+    public void OnEnable()
     {
         if (!Instance)
         {
             Instance = this;
         }
-
+    }
+    
+    public void Start()
+    {
         SetObjective(CurrentObjective);
         UpdateText();
     }
-
+    
+#if UNITY_EDITOR
+    [MenuItem("Tools/Restart Level")]
+#endif
+    public static void RestartLevel()
+    {
+        foreach (var machine in StagingManager.Instance.GetComponentsInChildren<IResetable>(true))
+        {
+            machine.ResetMachine();
+        }
+        
+        var allProducts = FindObjectsOfType<Product>();
+        for (int i = 0; i < allProducts.Length; i++)
+        {
+            Destroy(allProducts[i].gameObject);
+        }
+        
+        Instance.SetObjective(Instance.CurrentObjective);
+        Instance.UpdateText();
+    }
+    
     public void SetObjective(LevelObjective objective)
     {
         CurrentObjective = objective;

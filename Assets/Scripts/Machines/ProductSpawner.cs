@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductSpawner : MonoBehaviour
+public class ProductSpawner : MonoBehaviour, IResetable
 {
     public enum ProductionPhaseType
     {
@@ -24,19 +24,34 @@ public class ProductSpawner : MonoBehaviour
     }
     
     public List<ProductionPhase> ProductionPhases;
+    private List<ProductionPhase> RuntimeProductionPhases;
 
     public float _remainingDuration;
     public float _spawnTimer;
+
+    public void Start()
+    {
+        ResetMachine();
+    }
+    
+    public void ResetMachine()
+    {
+        enabled = true;
+        _remainingDuration = 0f;
+        _spawnTimer = 0f;
+
+        RuntimeProductionPhases = new(ProductionPhases);
+    }
     
     private void Update()
     {
-        if (ProductionPhases.Count == 0)
+        if (RuntimeProductionPhases.Count == 0)
         {
             enabled = false;
             return;
         }
         
-        var currentPhase = ProductionPhases[0];
+        var currentPhase = RuntimeProductionPhases[0];
 
         if (_remainingDuration <= 0)
         {
@@ -54,7 +69,7 @@ public class ProductSpawner : MonoBehaviour
             {
                 if (_remainingDuration <= 0)
                 {
-                    ProductionPhases.RemoveAt(0);
+                    RuntimeProductionPhases.RemoveAt(0);
                 }
                 
                 return;
@@ -67,7 +82,7 @@ public class ProductSpawner : MonoBehaviour
         
         if (_remainingDuration <= 0)
         {
-            ProductionPhases.RemoveAt(0);
+            RuntimeProductionPhases.RemoveAt(0);
         }
     }
 }   
