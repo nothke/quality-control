@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DoubleConverter: MonoBehaviour, IResetable
 {
     public ProductSpawner Spawner;
-    public List<Product> inputProducts;
+    public List<Product> inputTypeOne;
+    public List<Product> inputTypeTwo;
+    public List<Product> refuse;
 
-    public ProductType expectedReagent;
-    public Transform outputPoint;
+    public ProductType expectedReagentA;
+    public ProductType expectedReagentB;
     public ProductType conversionProduct;
 
     public int CurrentHealth;
@@ -18,16 +21,25 @@ public class DoubleConverter: MonoBehaviour, IResetable
     private float _conversionTimer;
     
     public Transform refuseLauncher;
-    public float launchPower = 10f;
+    public float launchPower = 5f;
     
     public void OnTriggerEnter(Collider other)
     {
         var product = other.GetComponentInParent<Product>();
         
-        if (product)
+        product.gameObject.SetActive(false);
+        
+        if (product.Type == expectedReagentA)
         {
-            product.gameObject.SetActive(false);
-            inputProducts.Add(product);
+            inputTypeOne.Add(product);
+        }
+        else if (product.Type == expectedReagentB)
+        {
+            inputTypeTwo.Add(product);
+        }
+        else
+        {
+            refuse.Add(product);
         }
     }
 
@@ -41,7 +53,9 @@ public class DoubleConverter: MonoBehaviour, IResetable
         _conversionTimer = conversionDuration;
         CurrentHealth = MaxHealth;
         
-        inputProducts.Clear();
+        inputTypeOne.Clear();
+        inputTypeTwo.Clear();
+        refuse.Clear();
     }
 
     public void Update()
@@ -51,25 +65,30 @@ public class DoubleConverter: MonoBehaviour, IResetable
             return;
         }
         
-        if (inputProducts.Count == 0)
+        if (refuse.Count == 0 && inputTypeOne.Count == 0 && inputTypeTwo.Count == 0)
         {
             return;
         }
 
         if (_conversionTimer <= 0f)
         {
-            var currentProduct = inputProducts[0];
-            
-            if (inputProducts[0].Type == expectedReagent)
+            if (refuse.Count > 0)
             {
-                Spawner.SpawnProduct(conversionProduct);
-                inputProducts.RemoveAt(0);
-                Destroy(currentProduct);
+                Expel(refuse[0]);
+                refuse.RemoveAt(0);
+                _conversionTimer = conversionDuration;
+                return;
             }
-            else
+            
+            if (inputTypeOne.Count > 0 && inputTypeTwo.Count > 0)
             {
-                Expel(inputProducts[0]);
-                inputProducts.RemoveAt(0);
+                DefectType defectType = inputTypeOne[0].Defect & inputTypeTwo[0].Defect;
+                
+                inputTypeOne.RemoveAt(0);
+                inputTypeTwo.RemoveAt(0);
+                
+                Spawner.SpawnProduct(conversionProduct, defectType);
+                return;
             }
             
             _conversionTimer = conversionDuration;

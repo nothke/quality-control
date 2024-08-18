@@ -27,6 +27,13 @@ public class ProductType : ScriptableObject
         newProduct.ApplyDefect(type.SelectDefect());
     }
     
+    public static void SpawnProduct(ProductType type, DefectType defect, Transform parent, Vector3 position, Quaternion rotation)
+    {
+        var newProduct = Instantiate(type.Prefab, position, rotation, parent);
+        newProduct.Type = type;
+        newProduct.ApplyDefect(defect);
+    }
+    
     public DefectType SelectDefect()
     {
         float randomValue = Random.Range(0, 100);

@@ -62,7 +62,7 @@ public class Converter: MonoBehaviour, IResetable
             
             if (inputProducts[0].Type == expectedReagent)
             {
-                Spawner.SpawnProduct(conversionProduct);
+                Spawner.SpawnProduct(conversionProduct, currentProduct.Defect);
                 inputProducts.RemoveAt(0);
                 Destroy(currentProduct);
             }

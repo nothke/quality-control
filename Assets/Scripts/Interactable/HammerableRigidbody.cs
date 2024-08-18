@@ -22,6 +22,8 @@ public class HammerableRigidbody: RigidbodyInteractable
         }
 
         var clip = product.Type.SelectClip(product.Defect != DefectType.None);
-        NAudio.Play(clip, transform.position);
+        clip.Play(
+            transform.position,
+            Random.Range(0.8f, 1.2f));
     }
 }
