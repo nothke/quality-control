@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stage: 1
   Quotas:
-  - Type: {fileID: 11400000, guid: 42240b227563f074aa0dd8fee3c0cb35, type: 2}
+  - Type: {fileID: 11400000, guid: 6f11438f5cec6a24cb2a32fccc6244d1, type: 2}
     Quantity: 10
   TimeLimit: 60
   MaxDefectivePercentage: 100
