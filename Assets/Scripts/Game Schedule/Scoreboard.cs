@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Scoreboard: MonoBehaviour
@@ -11,6 +12,8 @@ public class Scoreboard: MonoBehaviour
 
     public float _timeLeft;
     public bool _running;
+
+    public TextMeshPro textMesh;
     
     public void Start()
     {
@@ -19,17 +22,20 @@ public class Scoreboard: MonoBehaviour
             Instance = this;
         }
 
-        _running = true;
         SetObjective(CurrentObjective);
+        UpdateText();
     }
 
     public void SetObjective(LevelObjective objective)
     {
         CurrentObjective = objective;
+        
+        StagingManager.SetStage(objective.Stage);
 
         ProductCounts = new();
 
         _timeLeft = objective.TimeLimit;
+        _running = true;
     }
 
     public void ScoreProduct(Product product)
@@ -76,13 +82,33 @@ public class Scoreboard: MonoBehaviour
         }
         
         _timeLeft -= Time.deltaTime;
-        Debug.Log(_timeLeft);
+        
+        UpdateText();
         
         if (_timeLeft <= 0)
         {
             CountScores();
             _running = false;
         }
+    }
+
+    public void UpdateText()
+    {
+        string text = $"Time left: {Mathf.Floor(_timeLeft)}\n";
+
+        foreach (var quota in CurrentObjective.Quotas)
+        {
+            if (ProductCounts.ContainsKey(quota.Type))
+            {
+                text += $"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n";
+            }
+            else
+            {
+                text += $"{quota.Type.name}: 0/{quota.Quantity}\n";
+            }
+        }
+        
+        textMesh.text = text;
     }
     
     public void CountScores()
@@ -91,6 +117,13 @@ public class Scoreboard: MonoBehaviour
 
         foreach (var quota in CurrentObjective.Quotas)
         {
+            if (!ProductCounts.ContainsKey(quota.Type))
+            {
+                success = false;
+                Debug.LogError($"Not enough {quota.Type.name}");
+                break;
+            }
+            
             if (quota.Quantity > TotalCount(quota.Type))
             {
                 success = false;

@@ -19,14 +19,12 @@ public class StagingManager: MonoBehaviour
         Level2 = 2,
     }
 
-    public void Start()
+    public void OnEnable()
     {
         if (Instance == null)
         {
             Instance = this;
         }
-        
-        SetStage(StageEnum.Level1);
     }
 
     public void OnDestroy()
