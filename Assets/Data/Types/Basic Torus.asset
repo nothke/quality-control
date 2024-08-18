@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf4ec4eb272446d850eb3c9e72cd87f, type: 3}
+  m_Name: Basic Torus
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 5301951847822309914, guid: d5cbaa49bd379dc49b90d9c38f02bf80, type: 3}
+  normalClips:
+  - {fileID: 8300000, guid: 8218c8158aaf5fd48b6b1d0c452e50ca, type: 3}
+  defectiveClips:
+  - {fileID: 8300000, guid: 88c1cb18e89f16a42b44301fca5b03be, type: 3}
+  DefectProbabilities:
+  - Defect: 0
+    Probability: 50
+  - Defect: 1
+    Probability: 10
+  - Defect: 2
+    Probability: 10
+  - Defect: 4
+    Probability: 10
+  - Defect: 8
+    Probability: 10
+  - Defect: 16
+    Probability: 10

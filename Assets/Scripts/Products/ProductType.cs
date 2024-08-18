@@ -15,6 +15,9 @@ public class ProductType : ScriptableObject
         public int Probability;
     }
     
+    public AudioClip[] normalClips;
+    public AudioClip[] defectiveClips;
+    
     public DefectProbability[] DefectProbabilities;
     
     public static void SpawnProduct(ProductType type, Transform origin)
@@ -41,5 +44,14 @@ public class ProductType : ScriptableObject
         }
 
         return DefectType.None;
+    }
+
+    public AudioClip SelectClip(bool defective)
+    {
+        var clips = defective ? defectiveClips : normalClips;
+
+        int index = Random.Range(0, clips.Length);
+
+        return clips[index];
     }
 }
