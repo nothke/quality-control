@@ -18,16 +18,15 @@ public class SlidingCrane : MonoBehaviour
     public Transform testTgt;
     public Vector3 target;
 
-    public Rigidbody craneRail ;
+    public Transform cradleTransform;
+    public Rigidbody cradleRb;
 
     private void Start()
     {
         target = transform.position;
-
-
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (testTgt)
             target = testTgt.position;
@@ -51,5 +50,7 @@ public class SlidingCrane : MonoBehaviour
 
         yTransform.localPosition = new Vector3(0, 0, yMotion.progress * yRange);
         xTransform.localPosition = new Vector3(x, 0, 0);
+
+        cradleRb.MovePosition(cradleTransform.position);
     }
 }
