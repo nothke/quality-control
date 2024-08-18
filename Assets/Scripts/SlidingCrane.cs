@@ -44,7 +44,7 @@ public class SlidingCrane : MonoBehaviour
         yMotion.AccelerateTo(yTgt);
 
         float x = Mathf.Lerp(-xRange, xRange, xMotion.progress);
-        float y = yMotion.progress * yRange;
+        float y = yMotion.progress * yRange - 3;
 
         xMotion.Update(Time.deltaTime);
         yMotion.Update(Time.deltaTime);
