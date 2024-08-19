@@ -37,7 +37,7 @@ public class CranePickDrop : MonoBehaviour
         if (otherRb && otherRb.isKinematic == false && state == State.Idle)
         {
             handlingBody = otherRb;
-            crane.testTgt = handlingBody.transform;
+            crane.targetTransform = handlingBody.transform;
             state = State.Catching;
         }
     }
@@ -71,7 +71,7 @@ public class CranePickDrop : MonoBehaviour
 
             if (magnet.IsCloseTo(handlingBody, 2f))
             {
-                crane.testTgt = null;
+                crane.targetTransform = null;
 
                 state = State.WaitingToCatch;
                 timer = 3;
@@ -84,7 +84,7 @@ public class CranePickDrop : MonoBehaviour
             if (timer < 0)
             {
                 state = State.Tansporting;
-                crane.testTgt = dropTarget;
+                crane.targetTransform = dropTarget;
             }
         }
 
