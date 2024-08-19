@@ -6031,7 +6031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f7d9fae60a4082a271f0a2fa185f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentObjective: {fileID: 11400000, guid: 51ab4948e88c6c241aac9c58fbf85aa7, type: 2}
+  CurrentObjective: {fileID: 11400000, guid: b1326e0e514393547971198daa612d49, type: 2}
   _timeLeft: 0
   _running: 0
   textMesh: {fileID: 1482407714}
