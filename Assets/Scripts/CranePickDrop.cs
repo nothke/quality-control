@@ -29,6 +29,11 @@ public class CranePickDrop : MonoBehaviour
     {
         var otherRb = sender.triggeredCollider.attachedRigidbody;
 
+        if (!otherRb.GetComponent<Product>())
+        {
+            return;
+        }
+        
         if (otherRb && otherRb.isKinematic == false && state == State.Idle)
         {
             handlingBody = otherRb;
@@ -58,8 +63,11 @@ public class CranePickDrop : MonoBehaviour
                 state = State.Idle;
                 return;
             }
-            
-            magnet.strength = magnetStrength;
+
+            if (magnet.IsCloseTo(handlingBody, 5f))
+            {
+                magnet.strength = magnetStrength;
+            }
 
             if (magnet.IsCloseTo(handlingBody, 2f))
             {

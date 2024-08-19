@@ -39,6 +39,103 @@ Transform:
   - {fileID: 5588713622983561734}
   m_Father: {fileID: 8361960510235702639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1974299406274323846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5681812860450652173}
+  - component: {fileID: 4671089810699568166}
+  - component: {fileID: 3476106920027015921}
+  m_Layer: 0
+  m_Name: Crane Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5681812860450652173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974299406274323846}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.77, y: 1.1950002, z: -0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8361960510235702639}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4671089810699568166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974299406274323846}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 3, z: 20}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3476106920027015921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974299406274323846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4053c90fd858e40a9093edff6b83c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5328903551856804412}
+        m_TargetAssemblyTypeName: CranePickDrop, Assembly-CSharp
+        m_MethodName: OnTriggerEnterSignalReceived
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3476106920027015921}
+          m_ObjectArgumentAssemblyTypeName: EnterTriggerSender, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5328903551856804412}
+        m_TargetAssemblyTypeName: CranePickDrop, Assembly-CSharp
+        m_MethodName: OnTriggerExitSignalReceived
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3476106920027015921}
+          m_ObjectArgumentAssemblyTypeName: EnterTriggerSender, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggeredCollider: {fileID: 0}
 --- !u!1 &4060506572131258815
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,6 +147,7 @@ GameObject:
   - component: {fileID: 8361960510235702639}
   - component: {fileID: 4095986436202916730}
   - component: {fileID: 5328903551856804412}
+  - component: {fileID: 98609903733137621}
   m_Layer: 0
   m_Name: sliding_crane
   m_TagString: Untagged
@@ -75,6 +173,8 @@ Transform:
   - {fileID: 515232485336291104}
   - {fileID: 5508812383979352818}
   - {fileID: 4727985827101367565}
+  - {fileID: 5575607870997596000}
+  - {fileID: 5681812860450652173}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4095986436202916730
@@ -127,10 +227,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crane: {fileID: 4095986436202916730}
   magnet: {fileID: 272180078700616657}
-  dropTarget: {fileID: 0}
+  dropTarget: {fileID: 5575607870997596000}
   handlingBody: {fileID: 0}
   magnetStrength: 0
   state: 0
+--- !u!114 &98609903733137621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060506572131258815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3e57595c24e7b4dbb6f7f44db23525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size:
+    x: 80
+    y: 50
+    z: 200
+  CenterOffset:
+    x: 0
+    y: 6.07
+    z: 20
+  cachedSize:
+    x: 80
+    y: 50
+    z: 200
+  cachedOffset:
+    x: 0
+    y: 6.07
+    z: 20
 --- !u!1 &4655095091956023816
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +538,37 @@ Transform:
   m_Children:
   - {fileID: 5974025308748047927}
   m_Father: {fileID: 515232485336291104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6783289179467170831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5575607870997596000}
+  m_Layer: 0
+  m_Name: Drop Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5575607870997596000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783289179467170831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8361960510235702639}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7982327654860529405
 GameObject:
@@ -995,7 +1154,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 14.514252
+  m_Radius: 5
   m_Center: {x: 0, y: 0.68796223, z: 0}
 --- !u!4 &7611546785051987167 stripped
 Transform:
