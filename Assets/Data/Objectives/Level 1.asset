@@ -15,8 +15,8 @@ MonoBehaviour:
   Stage: 1
   Quotas:
   - Type: {fileID: 11400000, guid: 6f11438f5cec6a24cb2a32fccc6244d1, type: 2}
-    Quantity: 10
-  TimeLimit: 60
-  MaxDefectivePercentage: 100
+    Quantity: 20
+  TimeLimit: 180
+  MaxDefectivePercentage: 80
   SuccessMessage: Great job!
   FailureMessage: Try again!
