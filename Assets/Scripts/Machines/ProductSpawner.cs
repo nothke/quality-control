@@ -17,7 +17,11 @@ public class ProductSpawner: MonoBehaviour
             randomOrientation.rotation;
         
         ProductType.SpawnProduct(type, transform, randomOrientation.position, rotation);
-        NAudio.Play(spawnClip, transform.position);
+
+        if (spawnClip)
+        {
+            NAudio.Play(spawnClip, transform.position);
+        }
     }
     
     public void SpawnProduct(ProductType type, DefectType defect)
