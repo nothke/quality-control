@@ -10,6 +10,10 @@ public class Scoreboard: MonoBehaviour
     public static Scoreboard Instance;
     public LevelObjective CurrentObjective;
 
+    public LevelObjective Stage1Objective;
+    public LevelObjective Stage2Objective;
+    public LevelObjective Stage3Objective;
+    
     public Dictionary<ProductType, Vector2Int> ProductCounts = new ();
 
     public float _timeLeft;
@@ -25,9 +29,21 @@ public class Scoreboard: MonoBehaviour
         }
     }
     
-    public void Start()
+    public void StartStage(StagingManager.StageEnum stage)
     {
-        SetObjective(CurrentObjective);
+        switch (stage)
+        {
+            case StagingManager.StageEnum.Level1:
+                SetObjective(Stage1Objective);
+                break;
+            case StagingManager.StageEnum.Level2:
+                SetObjective(Stage2Objective);
+                break;
+            case StagingManager.StageEnum.Level3:
+                SetObjective(Stage3Objective);
+                break;
+        }
+        
         UpdateText();
     }
     
