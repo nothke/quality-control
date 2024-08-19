@@ -91,6 +91,7 @@ namespace Nothke.Interaction.Items
             if (itemInHands) return;
 
             item = _item as Interactable;
+            item.manager = controller;
 
             if (_item.Rigidbody)
                 _item.Rigidbody.isKinematic = true;
@@ -146,6 +147,8 @@ namespace Nothke.Interaction.Items
                 EnableShadowcasting(item, true);
 
             Debug.Log($"Dropped {item.name}");
+
+            item.manager = null;
 
             itemInHands = null;
             item = null;
