@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -118,21 +119,32 @@ public class Scoreboard: MonoBehaviour
 
     public void UpdateText()
     {
-        string text = $"Time left: {Mathf.Floor(_timeLeft)}\n";
+        StringBuilder sb = new();
+        
+        int minutes = (int) _timeLeft / 60;
+        int seconds = (int) _timeLeft % 60;
+        sb.Append($"Time left: {minutes}:{seconds}\n");
 
+        sb.Append("\n");
+
+        sb.Append(CurrentObjective.LevelMessage);
+
+        sb.Append("\n");
+        sb.Append("\n");
+        
         foreach (var quota in CurrentObjective.Quotas)
         {
             if (ProductCounts.ContainsKey(quota.Type))
             {
-                text += $"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n";
+                sb.Append($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n");
             }
             else
             {
-                text += $"{quota.Type.name}: 0/{quota.Quantity}\n";
+                sb.Append($"{quota.Type.name}: 0/{quota.Quantity}\n");
             }
         }
         
-        textMesh.text = text;
+        textMesh.text = sb.ToString();
     }
     
     public void CountScores()

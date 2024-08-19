@@ -23,6 +23,9 @@ public class LevelObjective : ScriptableObject
     public int MaxDefectivePercentage;
     
     [TextArea]
+    public string LevelMessage;
+    
+    [TextArea]
     public string SuccessMessage;
     
     [TextArea]

@@ -18,5 +18,9 @@ MonoBehaviour:
     Quantity: 20
   TimeLimit: 180
   MaxDefectivePercentage: 80
+  LevelMessage: 'Welcome, employee!
+
+    Please ensure the quality of our HexaTorus
+    product.'
   SuccessMessage: Great job!
   FailureMessage: Try again!

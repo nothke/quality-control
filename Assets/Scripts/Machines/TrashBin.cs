@@ -6,7 +6,7 @@ public class TrashBin : MonoBehaviour
     public float CooldownDuration;
     private float _cooldownTimer;
     
-    private float _incinerationTimer = 1f;
+    private float _incinerationTimer;
     public float IncinerationDuration = 1f;
 
     public float doorVelocity = 5f;
@@ -14,35 +14,33 @@ public class TrashBin : MonoBehaviour
     public Transform OpenAnchor;
     public Transform ClosedAnchor;
     private Vector3 _targetPosition;
+
+    public AudioClip destroyClip;
     
     List<Product> enteredProducts = new List<Product>();
 
     public void Start()
     {
         _targetPosition = OpenAnchor.position;
+        _incinerationTimer = IncinerationDuration;
     }
     
     public void OnTriggerEnter(Collider otherCollider)
     {
-        var rb = otherCollider.GetComponentInParent<Rigidbody>();
+        var product = otherCollider.GetComponentInParent<Product>();
 
-        if (!rb)
+        if (product == null)
         {
             return;
         }
-
-        var product = otherCollider.GetComponentInParent<Product>();
         
-        if (product)
+        if (!enteredProducts.Contains(product))
         {
-            if (!enteredProducts.Contains(product))
-            {
-                enteredProducts.Add(product);
-            }
-            
-            _cooldownTimer = CooldownDuration;
-            _targetPosition = ClosedAnchor.position;
+            enteredProducts.Add(product);
         }
+            
+        _incinerationTimer = IncinerationDuration;
+        _targetPosition = ClosedAnchor.position;
     }
 
     public void OnTriggerExit(Collider collider)
@@ -65,12 +63,23 @@ public class TrashBin : MonoBehaviour
             _targetPosition, 
             Time.deltaTime * doorVelocity);
         
-        if (_cooldownTimer <= 0)
+        if (_cooldownTimer > 0)
+        {
+            _cooldownTimer -= Time.deltaTime;
+            
+            if (_cooldownTimer <= 0)
+            {
+                _targetPosition = OpenAnchor.position;
+            }
+            
+            return;
+        }
+        
+        if (enteredProducts.Count == 0)
         {
             return;
         }
         
-        _cooldownTimer -= Time.deltaTime;
         _incinerationTimer -= Time.deltaTime;
         
         if (_incinerationTimer <= 0)
@@ -81,12 +90,10 @@ public class TrashBin : MonoBehaviour
             }
             
             enteredProducts.Clear();
-            _incinerationTimer = IncinerationDuration;
-        }
-        
-        if (_cooldownTimer <= 0)
-        {
-            _targetPosition = OpenAnchor.position;
+
+            NAudio.Play(destroyClip, transform.position, 0.33f);
+            enteredProducts.Clear();
+            _cooldownTimer = CooldownDuration;
         }
     }
 }

@@ -169,7 +169,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 2ec19dda799c8744292de0274474475b, type: 3}
+  - {fileID: 2100000, guid: 241446fb42920fe46b66d2b7e6127c28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   DoorTransform: {fileID: 6652562342234367164}
   OpenAnchor: {fileID: 2524347250120916255}
   ClosedAnchor: {fileID: 6441365300226329974}
+  destroyClip: {fileID: 8300000, guid: cea05c4bfdbcb8944908f2b214364021, type: 3}
 --- !u!114 &4182849772416151034
 MonoBehaviour:
   m_ObjectHideFlags: 0
