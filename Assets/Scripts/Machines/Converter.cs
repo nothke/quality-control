@@ -11,7 +11,8 @@ public class Converter: MonoBehaviour, IResetable
     public ProductType expectedReagent;
     public Transform outputPoint;
     public ProductType conversionProduct;
-
+    public bool introduceDefect;
+    
     public int CurrentHealth;
     public int MaxHealth;
     
@@ -73,7 +74,15 @@ public class Converter: MonoBehaviour, IResetable
             
             if (inputProducts[0].Type == expectedReagent)
             {
-                Spawner.SpawnProduct(conversionProduct, currentProduct.Defect);
+                if (!introduceDefect)
+                {
+                    Spawner.SpawnProduct(conversionProduct, currentProduct.Defect);
+                }
+                else
+                {
+                    Spawner.SpawnProduct(conversionProduct);
+                }
+                
                 inputProducts.RemoveAt(0);
                 Destroy(currentProduct);
 
