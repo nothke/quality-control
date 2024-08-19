@@ -267,9 +267,9 @@ MonoBehaviour:
     accel: 0
     braking: 0
   heightMotion:
-    maxSpeed: 1
-    acceleration: 1
-    brakingAcceleration: 0
+    maxSpeed: 0.5
+    acceleration: 0.5
+    brakingAcceleration: 0.5
     progress: 0
     velocity: 0
     accel: 0
@@ -280,7 +280,7 @@ MonoBehaviour:
   xRange: 4.5
   heightRange: 10
   heightMax: -0.7
-  heightMin: -8.5
+  heightMin: -7.5
   targetTransform: {fileID: 0}
   targetPoint: {x: 0, y: 0, z: 0}
   cradleTransform: {fileID: 6812918532662551388}

@@ -18,6 +18,7 @@ public class CranePickDrop : MonoBehaviour
         Catching,
         WaitingToCatch,
         Tansporting,
+        WaitBeforeDrop,
         Finished,
     }
 
@@ -50,6 +51,7 @@ public class CranePickDrop : MonoBehaviour
     void Start()
     {
         magnetStrength = magnet.strength;
+        crane.heightMotion.AccelerateTo(1);
     }
 
     void Update()
@@ -62,6 +64,11 @@ public class CranePickDrop : MonoBehaviour
             {
                 state = State.Idle;
                 return;
+            }
+
+            if (magnet.IsCloseToPlanar(handlingBody, 10f))
+            {
+                crane.heightMotion.AccelerateTo(0);
             }
 
             if (magnet.IsCloseTo(handlingBody, 5f))
@@ -85,15 +92,32 @@ public class CranePickDrop : MonoBehaviour
             {
                 state = State.Tansporting;
                 crane.targetTransform = dropTarget;
+                crane.heightMotion.AccelerateTo(1);
             }
         }
 
         else if (state == State.Tansporting)
         {
-            if (magnet.IsCloseToPlanar(dropTarget))
+            if (magnet.IsCloseToPlanar(dropTarget, 10f))
+            {
+                crane.heightMotion.AccelerateTo(0);
+            }
+
+            if (magnet.IsCloseToPlanar(dropTarget, 3f))
+            {
+                state = State.WaitBeforeDrop;
+                timer = 3;
+            }
+        }
+        else if (state == State.WaitBeforeDrop)
+        {
+            timer -= Time.deltaTime;
+
+            if (timer < 0)
             {
                 magnet.strength = 0;
                 state = State.Idle;
+                crane.heightMotion.AccelerateTo(1);
             }
         }
     }

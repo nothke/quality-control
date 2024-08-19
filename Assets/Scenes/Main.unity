@@ -22408,7 +22408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Objectives: []
-  CurrentStage: 0
+  CurrentStage: 4
 --- !u!4 &1503113266
 Transform:
   m_ObjectHideFlags: 0
