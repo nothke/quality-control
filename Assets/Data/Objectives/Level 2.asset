@@ -15,8 +15,10 @@ MonoBehaviour:
   Stage: 2
   Quotas:
   - Type: {fileID: 11400000, guid: 42240b227563f074aa0dd8fee3c0cb35, type: 2}
-    Quantity: 20
-  TimeLimit: 60
-  MaxDefectivePercentage: 80
+    Quantity: 40
+  TimeLimit: 180
+  MaxDefectivePercentage: 60
+  LevelMessage: We are pleased to announce that we have secured the capital for the
+    expansion.
   SuccessMessage: Great job!
   FailureMessage: Try again!
