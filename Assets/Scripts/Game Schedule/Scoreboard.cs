@@ -169,7 +169,7 @@ public class Scoreboard: MonoBehaviour
 
             Debug.Log($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}");
 
-            if (CurrentObjective.MaxDefectivePercentage < DefectPercentage(quota.Type))
+            if (quota.MaxDefectivePercentage < DefectPercentage(quota.Type))
             {
                 success = false;
                 Debug.LogError($"Too many broken {quota.Type.name}");

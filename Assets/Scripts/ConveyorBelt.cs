@@ -19,7 +19,8 @@ public class ConveyorBelt : MonoBehaviour
     
     private void Start()
     {
-        audioSource.time += Random.Range(1f, 3f);
+        float length = audioSource.clip.length;
+        audioSource.time += Random.Range(0.2f * length, 0.4f * length);
         audioSource.pitch = Random.Range(-0.05f, 0.05f) + speed / 2f;
         
         startPosition = rb.position;
