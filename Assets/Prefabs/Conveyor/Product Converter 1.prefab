@@ -374,6 +374,7 @@ MonoBehaviour:
   CurrentHealth: 5
   MaxHealth: 5
   conversionDuration: 2
+  conversionClip: {fileID: 8300000, guid: 470cbdb0b0814004e999ee2afb58e46c, type: 3}
   refuseLauncher: {fileID: 5841623345049199340}
   launchPower: 6
 --- !u!65 &2626749768300218648

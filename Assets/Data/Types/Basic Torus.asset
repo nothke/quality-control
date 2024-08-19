@@ -19,14 +19,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 88c1cb18e89f16a42b44301fca5b03be, type: 3}
   DefectProbabilities:
   - Defect: 0
-    Probability: 50
+    Probability: 75
   - Defect: 1
-    Probability: 10
+    Probability: 5
   - Defect: 2
-    Probability: 10
+    Probability: 5
   - Defect: 4
-    Probability: 10
+    Probability: 5
   - Defect: 8
-    Probability: 10
+    Probability: 5
   - Defect: 16
-    Probability: 10
+    Probability: 5

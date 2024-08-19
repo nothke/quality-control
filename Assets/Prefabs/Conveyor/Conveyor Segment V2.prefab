@@ -1311,6 +1311,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9037283188299472763, guid: 77c4432b466fdea49b2742cc3018dd47, type: 3}
+      propertyPath: volume
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9037283188299472763, guid: 77c4432b466fdea49b2742cc3018dd47, type: 3}
+      propertyPath: conveyorClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07668ba2dee122144a01b9d9872664e4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

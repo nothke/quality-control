@@ -33,7 +33,6 @@ public class StagingManager: MonoBehaviour
         
         foreach (var stageProp in FindObjectsOfType<StageProp>(true))
         {
-            Debug.Log(stageProp.ActiveAtStages.HasFlag(stage));
             stageProp.gameObject.SetActive(stageProp.ActiveAtStages.HasFlag(stage));
         }
     }
