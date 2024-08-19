@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 4060506572131258815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.26, y: 0, z: 28.17}
+  m_LocalPosition: {x: 20.25, y: -0.07000017, z: 28.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crane_magent
       objectReference: {fileID: 0}
+    - target: {fileID: 3485108705020879377, guid: 146ff579bcab1a343bdcbf24e8b5e462, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5436501012833944904, guid: 146ff579bcab1a343bdcbf24e8b5e462, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1150,7 +1154,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 50
   m_Drag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
