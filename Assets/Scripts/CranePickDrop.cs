@@ -18,6 +18,7 @@ public class CranePickDrop : MonoBehaviour
         Catching,
         WaitingToCatch,
         Tansporting,
+        WaitBeforeDrop,
         Finished,
     }
 
@@ -37,7 +38,7 @@ public class CranePickDrop : MonoBehaviour
         if (otherRb && otherRb.isKinematic == false && state == State.Idle)
         {
             handlingBody = otherRb;
-            crane.testTgt = handlingBody.transform;
+            crane.targetTransform = handlingBody.transform;
             state = State.Catching;
         }
     }
@@ -50,6 +51,7 @@ public class CranePickDrop : MonoBehaviour
     void Start()
     {
         magnetStrength = magnet.strength;
+        crane.heightMotion.AccelerateTo(1);
     }
 
     void Update()
@@ -64,6 +66,11 @@ public class CranePickDrop : MonoBehaviour
                 return;
             }
 
+            if (magnet.IsCloseToPlanar(handlingBody, 10f))
+            {
+                crane.heightMotion.AccelerateTo(0);
+            }
+
             if (magnet.IsCloseTo(handlingBody, 5f))
             {
                 magnet.strength = magnetStrength;
@@ -71,7 +78,7 @@ public class CranePickDrop : MonoBehaviour
 
             if (magnet.IsCloseTo(handlingBody, 2f))
             {
-                crane.testTgt = null;
+                crane.targetTransform = null;
 
                 state = State.WaitingToCatch;
                 timer = 3;
@@ -84,16 +91,33 @@ public class CranePickDrop : MonoBehaviour
             if (timer < 0)
             {
                 state = State.Tansporting;
-                crane.testTgt = dropTarget;
+                crane.targetTransform = dropTarget;
+                crane.heightMotion.AccelerateTo(1);
             }
         }
 
         else if (state == State.Tansporting)
         {
-            if (magnet.IsCloseToPlanar(dropTarget))
+            if (magnet.IsCloseToPlanar(dropTarget, 10f))
+            {
+                crane.heightMotion.AccelerateTo(0);
+            }
+
+            if (magnet.IsCloseToPlanar(dropTarget, 3f))
+            {
+                state = State.WaitBeforeDrop;
+                timer = 3;
+            }
+        }
+        else if (state == State.WaitBeforeDrop)
+        {
+            timer -= Time.deltaTime;
+
+            if (timer < 0)
             {
                 magnet.strength = 0;
                 state = State.Idle;
+                crane.heightMotion.AccelerateTo(1);
             }
         }
     }
