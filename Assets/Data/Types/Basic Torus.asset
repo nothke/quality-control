@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5301951847822309914, guid: d5cbaa49bd379dc49b90d9c38f02bf80, type: 3}
   normalClips:
-  - {fileID: 8300000, guid: 8218c8158aaf5fd48b6b1d0c452e50ca, type: 3}
+  - {fileID: 8300000, guid: 8f2502b0ea356614faad568cc2ce8d28, type: 3}
   defectiveClips:
-  - {fileID: 8300000, guid: 88c1cb18e89f16a42b44301fca5b03be, type: 3}
+  - {fileID: 8300000, guid: cb37dba8505a887438f4e1c8182106a0, type: 3}
   DefectProbabilities:
   - Defect: 0
     Probability: 75

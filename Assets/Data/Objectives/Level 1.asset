@@ -16,8 +16,8 @@ MonoBehaviour:
   Quotas:
   - Type: {fileID: 11400000, guid: 6f11438f5cec6a24cb2a32fccc6244d1, type: 2}
     Quantity: 20
+    MaxDefectivePercentage: 30
   TimeLimit: 120
-  MaxDefectivePercentage: 80
   LevelMessage: 'Welcome, employee!
 
     Please ensure the quality of our HexaTorus

@@ -16,8 +16,11 @@ MonoBehaviour:
   Quotas:
   - Type: {fileID: 11400000, guid: 42240b227563f074aa0dd8fee3c0cb35, type: 2}
     Quantity: 40
+    MaxDefectCount: 0
+  - Type: {fileID: 11400000, guid: 1e626f6e0e642b44aaeb77b6628c8be7, type: 2}
+    Quantity: 10
+    MaxDefectCount: 0
   TimeLimit: 180
-  MaxDefectivePercentage: 60
   LevelMessage: We are pleased to announce that we have secured the capital for the
     expansion.
   SuccessMessage: Great job!

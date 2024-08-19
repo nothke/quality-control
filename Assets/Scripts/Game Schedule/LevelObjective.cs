@@ -13,14 +13,13 @@ public class LevelObjective : ScriptableObject
     {
         public ProductType Type;
         public int Quantity;
+        [Range(0, 100)] 
+        public int MaxDefectivePercentage;
     }
     
     public List<ProductQuota> Quotas;
 
     public float TimeLimit;
-        
-    [Range(0, 100)] 
-    public int MaxDefectivePercentage;
     
     [TextArea]
     public string LevelMessage;
