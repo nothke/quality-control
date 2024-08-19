@@ -19,8 +19,8 @@ public class Converter: MonoBehaviour, IResetable
     public float conversionDuration = 5f;
     private float _conversionTimer;
     
-    [FormerlySerializedAs("conversionSound")] public AudioClip conversionClip;
-    private AudioSource _audioSource;
+    public AudioClip conversionClip;
+    public AudioClip launchClip;
     
     public Transform refuseLauncher;
     public float launchPower = 10f;
@@ -47,13 +47,6 @@ public class Converter: MonoBehaviour, IResetable
         CurrentHealth = MaxHealth;
         
         inputProducts.Clear();
-
-        if (_audioSource)
-        {
-            _audioSource.Stop();
-            Destroy(_audioSource.gameObject);
-            _audioSource = null;
-        }
     }
 
     public void Update()
@@ -86,12 +79,14 @@ public class Converter: MonoBehaviour, IResetable
                 inputProducts.RemoveAt(0);
                 Destroy(currentProduct);
 
-                _audioSource = NAudio.Play(conversionClip, transform.position, 0.75f);
+                NAudio.Play(conversionClip, transform.position, 0.75f);
             }
             else
             {
                 Expel(inputProducts[0]);
                 inputProducts.RemoveAt(0);
+
+                NAudio.Play(launchClip, transform.position);
             }
             
             _conversionTimer = conversionDuration;
