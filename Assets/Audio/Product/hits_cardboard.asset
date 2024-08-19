@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f998237f81278234b950080600e80b74, type: 3}
+  m_Name: hits_cardboard
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: a6a3cbda2ccc6cf45b5ee5cb55fe85a3, type: 3}
+  - {fileID: 8300000, guid: 1520e07284cc30f4b8f3e27fa1aa34aa, type: 3}
+  - {fileID: 8300000, guid: 8968a8ad3584cd64f8fde27aa298a437, type: 3}
+  - {fileID: 8300000, guid: c6a504d2fc7d66d428d1723550ee7bac, type: 3}

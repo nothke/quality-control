@@ -322,6 +322,7 @@ GameObject:
   - component: {fileID: 4275785426082247918}
   - component: {fileID: 8393139001085453593}
   - component: {fileID: 6470434188345047876}
+  - component: {fileID: 8073610451748503129}
   m_Layer: 0
   m_Name: Boxed E
   m_TagString: Untagged
@@ -427,6 +428,24 @@ MonoBehaviour:
     name: 
   rb: {fileID: 0}
   rotateAroundPoint: 0
+--- !u!114 &8073610451748503129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486484010427172590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075e36d3d3303934bac79dda1017c56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: bf51e033080470d48950e3d71a14fa18, type: 2}
+  volumeVelocityMult: 0.1
+  timeout: 0.05
+  pitchMult: 1
+  preventDoubleSound: 0
+  mixerGroup: {fileID: 0}
 --- !u!1 &5823832367352199241
 GameObject:
   m_ObjectHideFlags: 0
