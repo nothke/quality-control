@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5301951847822309914, guid: b83fa12312697144992b762dc5084341, type: 3}
   normalClips:
-  - {fileID: 8300000, guid: 8f2502b0ea356614faad568cc2ce8d28, type: 3}
+  - {fileID: 8300000, guid: a6a3cbda2ccc6cf45b5ee5cb55fe85a3, type: 3}
+  - {fileID: 8300000, guid: 1520e07284cc30f4b8f3e27fa1aa34aa, type: 3}
+  - {fileID: 8300000, guid: 8968a8ad3584cd64f8fde27aa298a437, type: 3}
+  - {fileID: 8300000, guid: c6a504d2fc7d66d428d1723550ee7bac, type: 3}
   defectiveClips:
-  - {fileID: 8300000, guid: 8f2502b0ea356614faad568cc2ce8d28, type: 3}
+  - {fileID: 8300000, guid: a6a3cbda2ccc6cf45b5ee5cb55fe85a3, type: 3}
+  - {fileID: 8300000, guid: 1520e07284cc30f4b8f3e27fa1aa34aa, type: 3}
+  - {fileID: 8300000, guid: 8968a8ad3584cd64f8fde27aa298a437, type: 3}
+  - {fileID: 8300000, guid: c6a504d2fc7d66d428d1723550ee7bac, type: 3}
   DefectProbabilities:
   - Defect: 0
     Probability: 50
