@@ -21525,18 +21525,15 @@ MonoBehaviour:
 
 
     Your job is to <b>remove defective
-    products from the production line.</b> When you spot a defective product, approach
-    it and press and hold <b>[LMB]</b> to take it in your hands.
-
-    Defective products
-    should be disposed of at specialized disposal lines.
+    products from the production lines.</b> \nWhen you spot a defective product,
+    press and hold <b>[LMB]</b> to take it in your hands. \nRelease <b>[LMB]</b>
+    to drop the product.
 
 
 
-    You have also been
-    issued a hammer. Press <b>[RMB]</b> to apply light mechanical force to the product
-    in question. In time you will learn to discern the defective products by sound
-    alone.'
+    You have also been issued a hammer. \nPress <b>[RMB]</b>
+    to apply light mechanical force to the product in question. In time you will
+    learn to discern the defective products by sound alone.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
