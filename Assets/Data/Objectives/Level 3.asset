@@ -20,7 +20,7 @@ MonoBehaviour:
   - Type: {fileID: 11400000, guid: 1e626f6e0e642b44aaeb77b6628c8be7, type: 2}
     Quantity: 40
     MaxDefectivePercentage: 25
-  TimeLimit: 270
+  TimeLimit: 265
   LevelMessage: 'We are pleased to announce that we have secured the capital to expand
     the E(tm) production.
 
@@ -28,4 +28,4 @@ MonoBehaviour:
     Please familiarize yourself with the new crane-powered
     production line!'
   SuccessMessage: Congratulations! You have completed all the shifts!
-  FailureMessage: Please try harder in the future!
+  FailureMessage: Don't give up!

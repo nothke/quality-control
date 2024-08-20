@@ -29,5 +29,5 @@ MonoBehaviour:
 
     We''re
     also happy to announce that an E(tm) production line is now operational.'
-  SuccessMessage: Great job!
-  FailureMessage: Please try harder in the future!
+  SuccessMessage: Onward to new achievements!
+  FailureMessage: You can do it!

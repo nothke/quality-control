@@ -270,7 +270,7 @@ public class UIManager: MonoBehaviour
 
     public void PushStageComplete(bool success, string message)
     {
-        if (Scoreboard.Instance.CurrentStage == StagingManager.StageEnum.Level3)
+        if (success && Scoreboard.Instance.CurrentStage == StagingManager.StageEnum.Level3)
         {
             NextStageButton.SetActive(false);
             RetryButton.SetActive(false);
