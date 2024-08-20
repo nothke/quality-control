@@ -21,7 +21,11 @@ MonoBehaviour:
     Quantity: 40
     MaxDefectivePercentage: 25
   TimeLimit: 270
-  LevelMessage: We are pleased to announce that we have secured the capital for the
-    expansion of E(tm) production.
-  SuccessMessage: Great job!
+  LevelMessage: 'We are pleased to announce that we have secured the capital to expand
+    the E(tm) production.
+
+
+    Please familiarize yourself with the new crane-powered
+    production line!'
+  SuccessMessage: Congratulations! You have completed all the shifts!
   FailureMessage: Please try harder in the future!
