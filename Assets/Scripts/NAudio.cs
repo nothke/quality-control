@@ -10,7 +10,7 @@
 /// Pooling creates a few sources on start and saves them in a queue, reusing them on every play,
 /// so sources are not created and destroyed every time played, freeing GC.
 /// If you don't want to use pooling, comment this line:
-#define POOLING
+//#define POOLING
 
 /// If you are using native audio spatializer, uncomment following line. It will enable spatialization in sources
 //#define ENABLE_SPATIALIZER_API
