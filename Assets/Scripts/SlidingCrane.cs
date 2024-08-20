@@ -32,6 +32,14 @@ public class SlidingCrane : MonoBehaviour
     public Transform cradleTransform;
     public Rigidbody cradleRb;
 
+    public AudioSource longMotionAudio;
+    public AudioSource longMotionAudio2;
+    public float longMotionPitchMult = 1;
+    public AudioSource sideMotionAudio;
+    public float sideMotionPitchMult = 1;
+    public AudioSource heightMotionAudio;
+    public float heightMotionPitchMult = 1;
+
     private void Start()
     {
         targetPoint = transform.position;
@@ -47,6 +55,11 @@ public class SlidingCrane : MonoBehaviour
             heightMotion.AccelerateTo(0);
         if (Input.GetKeyDown(KeyCode.F))
             heightMotion.AccelerateTo(1);
+
+        longMotionAudio.pitch = yMotion.velocity * longMotionPitchMult;
+        longMotionAudio2.pitch = yMotion.velocity * (longMotionPitchMult + 0.05f);
+        sideMotionAudio.pitch = xMotion.velocity * sideMotionPitchMult;
+        heightMotionAudio.pitch = heightMotion.velocity * heightMotionPitchMult;
     }
 
     void FixedUpdate()

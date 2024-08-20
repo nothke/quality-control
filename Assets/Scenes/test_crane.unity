@@ -356,13 +356,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592458002}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.3779, y: -51.76418, z: -42.864254}
+  m_LocalRotation: {x: -0, y: 0.92387867, z: -0, w: 0.38268548}
+  m_LocalPosition: {x: -15, y: 6.2, z: 8.236416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!1 &1228306005
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,21 +700,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3986187515445640859, guid: cdb590802e3f6bd4db6d5eddce994501, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7
-      objectReference: {fileID: 0}
     - target: {fileID: 4060506572131258815, guid: cdb590802e3f6bd4db6d5eddce994501, type: 3}
       propertyPath: m_Name
       value: sliding_crane
-      objectReference: {fileID: 0}
-    - target: {fileID: 5468670891441072218, guid: cdb590802e3f6bd4db6d5eddce994501, type: 3}
-      propertyPath: m_LinearLimit.limit
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5575607870997596000, guid: cdb590802e3f6bd4db6d5eddce994501, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8361960510235702639, guid: cdb590802e3f6bd4db6d5eddce994501, type: 3}
       propertyPath: m_LocalPosition.x
