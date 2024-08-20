@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 1c204304ac4bfa44099474b89b8c2616, type: 2}
-  volumeVelocityMult: 0.05
+  volumeVelocityMult: 0.025
   timeout: 0.05
   pitchMult: 1
   preventDoubleSound: 0
