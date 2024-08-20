@@ -467,7 +467,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7fbbac5fcafaf4a41b739329bbc6edd0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a241a32a87e6b1948a0a60f2ee5dda61, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -672,7 +672,7 @@ MonoBehaviour:
   cradleTransform: {fileID: 6812918532662551388}
   cradleRb: {fileID: 649759971140379373}
   longMotionAudio: {fileID: 8651885808841767174}
-  longMotionAudio2: {fileID: 1855008019202322405}
+  longMotionAudio2: {fileID: 163112024993937402}
   longMotionPitchMult: 4
   sideMotionAudio: {fileID: 1855008019202322405}
   sideMotionPitchMult: 6
