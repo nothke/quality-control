@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
+using KinematicCharacterController.Examples;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -8,6 +8,14 @@ using UnityEngine;
 public class Scoreboard: MonoBehaviour
 {
     public static Scoreboard Instance;
+
+    public ExampleCharacterController Controller;
+    public ExamplePlayer Player;
+    public ExampleCharacterCamera Camera;
+    public Transform StartPosition;
+    public Transform StartLook;
+
+    public StagingManager.StageEnum CurrentStage;
     public LevelObjective CurrentObjective;
 
     public LevelObjective Stage1Objective;
@@ -31,6 +39,8 @@ public class Scoreboard: MonoBehaviour
     
     public void StartStage(StagingManager.StageEnum stage)
     {
+        CurrentStage = stage;
+        
         switch (stage)
         {
             case StagingManager.StageEnum.Level1:
@@ -44,13 +54,15 @@ public class Scoreboard: MonoBehaviour
                 break;
         }
         
+        RestartCurrentStage();
+        
         UpdateText();
     }
     
 #if UNITY_EDITOR
     [MenuItem("Tools/Restart Level")]
 #endif
-    public static void RestartLevel()
+    public static void RestartCurrentStage()
     {
         foreach (var machine in StagingManager.Instance.GetComponentsInChildren<IResetable>(true))
         {
@@ -65,6 +77,12 @@ public class Scoreboard: MonoBehaviour
         
         Instance.SetObjective(Instance.CurrentObjective);
         Instance.UpdateText();
+        
+        Instance.Controller.Motor.SetPosition(Instance.StartPosition.position);
+        Instance.Controller.Motor.SetRotation(Instance.StartPosition.rotation);
+        Instance.Player.enabled = false;
+        Instance.Camera.transform.rotation = Instance.StartLook.rotation;
+        Instance.Player.enabled = true;
     }
     
     public void SetObjective(LevelObjective objective)
@@ -137,9 +155,32 @@ public class Scoreboard: MonoBehaviour
     {
         StringBuilder sb = new();
         
+        int totalSeconds = (int) _timeLeft;
+        
         int minutes = (int) _timeLeft / 60;
         int seconds = (int) _timeLeft % 60;
-        sb.Append($"Time left: {minutes}:{seconds}\n");
+
+        sb.Append("Time left: ");
+        
+        if (totalSeconds < 30)
+        {
+            sb.Append("<color=red>");
+        }
+        else
+        {
+            sb.Append("<color=green>");
+        }
+        
+        if (seconds < 10)
+        {
+            sb.Append($"{minutes}:0{seconds}");
+        }
+        else
+        {
+            sb.Append($"{minutes}:{seconds}");
+        }
+        
+        sb.Append("</color>\n");
 
         sb.Append("\n");
 
@@ -166,20 +207,22 @@ public class Scoreboard: MonoBehaviour
     public void CountScores()
     {
         bool success = true;
-
+        
+        StringBuilder sb = new();
+        
         foreach (var quota in CurrentObjective.Quotas)
         {
             if (!ProductCounts.ContainsKey(quota.Type))
             {
                 success = false;
-                Debug.LogError($"Not enough {quota.Type.name}");
+                sb.Append($"Not a single product of type {quota.Type.name} was produced!\n");
                 break;
             }
             
             if (quota.Quantity > TotalCount(quota.Type))
             {
                 success = false;
-                Debug.LogError($"Not enough {quota.Type.name}");
+                sb.Append($"Not enough {quota.Type.name} were produced.\n");
                 break;
             }
 
@@ -188,13 +231,15 @@ public class Scoreboard: MonoBehaviour
             if (quota.MaxDefectivePercentage < DefectPercentage(quota.Type))
             {
                 success = false;
-                Debug.LogError($"Too many broken {quota.Type.name}");
+                sb.Append($"Too many of {quota.Type.name} were defective!\n");
                 break;
             }
             
-            Debug.Log($"{quota.Type.name}: Quality level: {DefectPercentage(quota.Type)}%");
+            sb.Append($"Overall {quota.Type.name} defect percentage: {DefectPercentage(quota.Type)}%\n");
         }
         
-        Debug.Log(success? CurrentObjective.SuccessMessage : CurrentObjective.FailureMessage);
+        sb.Append(success ? CurrentObjective.SuccessMessage : CurrentObjective.FailureMessage);
+
+        UIManager.Instance.PushStageComplete(success, sb.ToString());
     }
 }

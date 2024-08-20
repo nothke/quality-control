@@ -20,7 +20,9 @@ MonoBehaviour:
   TimeLimit: 120
   LevelMessage: 'Welcome, employee!
 
-    Please ensure the quality of our HexaTorus
-    product.'
+    Please ensure the quality of our Torus product.
+
+    Dispose
+    of defective units using the disposal belt.'
   SuccessMessage: Great job!
-  FailureMessage: Try again!
+  FailureMessage: Please try harder in the future!

@@ -292,7 +292,7 @@ namespace Nothke.Interaction
             }
             else
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.lockState = CursorLockMode.Locked;
                 //System.Windows.Forms.Cursor.Position = new System.Drawing.Point(Screen.width / 2, Screen.height / 2);
             }
 #endif

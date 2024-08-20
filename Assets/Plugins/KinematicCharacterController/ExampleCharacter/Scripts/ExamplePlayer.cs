@@ -19,7 +19,7 @@ namespace KinematicCharacterController.Examples
 
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
 
             // Tell camera to follow transform
             CharacterCamera.SetFollowTransform(Character.CameraFollowPoint);
@@ -31,10 +31,10 @@ namespace KinematicCharacterController.Examples
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    Cursor.lockState = CursorLockMode.Locked;
+            //}
 
             HandleCharacterInput();
         }

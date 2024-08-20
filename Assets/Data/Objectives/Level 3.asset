@@ -22,6 +22,6 @@ MonoBehaviour:
     MaxDefectivePercentage: 25
   TimeLimit: 240
   LevelMessage: We are pleased to announce that we have secured the capital for the
-    expansion.
+    expansion of E(tm) production.
   SuccessMessage: Great job!
-  FailureMessage: Try again!
+  FailureMessage: Please try harder in the future!

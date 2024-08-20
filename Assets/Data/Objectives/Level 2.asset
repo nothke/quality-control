@@ -21,7 +21,13 @@ MonoBehaviour:
     Quantity: 15
     MaxDefectivePercentage: 25
   TimeLimit: 180
-  LevelMessage: We are pleased to announce that we have secured the capital for the
-    expansion.
+  LevelMessage: 'We have scaled up Torus production.
+
+    The newest Torus assembly
+    line is equipped with an automatic defect scanner, pay attention to its signals.
+
+
+    We''re
+    also happy to announce that an E(tm) production line is now operational.'
   SuccessMessage: Great job!
-  FailureMessage: Try again!
+  FailureMessage: Please try harder in the future!
