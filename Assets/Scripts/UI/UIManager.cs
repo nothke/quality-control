@@ -220,6 +220,9 @@ public class UIManager: MonoBehaviour
             case UIState.Pause:
                 Pause.SetActive(false);
                 break;
+            case UIState.StageComplete:
+                StageComplete.SetActive(false);
+                break;
         }
     }
 
