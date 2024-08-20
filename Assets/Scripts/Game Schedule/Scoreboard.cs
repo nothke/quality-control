@@ -198,11 +198,24 @@ public class Scoreboard: MonoBehaviour
         {
             if (ProductCounts.ContainsKey(quota.Type))
             {
+                if (quota.Quantity <= TotalCount(quota.Type))
+                {
+                    sb.Append("<color=green>");
+                }
+                else
+                {
+                    sb.Append("<color=red>");
+                }
+                
                 sb.Append($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n");
+                
+                sb.Append("</color>");
             }
             else
             {
+                sb.Append("<color=red>");
                 sb.Append($"{quota.Type.name}: 0/{quota.Quantity}\n");
+                sb.Append("</color>");
             }
         }
         
@@ -233,14 +246,17 @@ public class Scoreboard: MonoBehaviour
 
             sb.Append($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n");
 
+            sb.Append("\n");
+            
+            sb.Append($"Overall {quota.Type.name} defect percentage: {DefectPercentage(quota.Type)}%\n");            
+            
             if (quota.MaxDefectivePercentage < DefectPercentage(quota.Type))
             {
                 success = false;
                 sb.Append($"Too many of {quota.Type.name} were defective!\n");
-                break;
             }
             
-            sb.Append($"Overall {quota.Type.name} defect percentage: {DefectPercentage(quota.Type)}%\n");
+            sb.Append("\n");
         }
         
         sb.Append(success ? CurrentObjective.SuccessMessage : CurrentObjective.FailureMessage);

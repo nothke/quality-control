@@ -171,7 +171,13 @@ public class UIManager: MonoBehaviour
                 break;
             case UIState.Game:
                 AudioListener.pause = false;
+                
+#if UNITY_EDITOR
                 Time.timeScale = 1f;
+#else
+                Time.timeScale = 1f;
+#endif
+                
                 Cursor.lockState = CursorLockMode.Locked;
                 Reticle.SetActive(true);
                 break;
@@ -289,10 +295,10 @@ public class UIManager: MonoBehaviour
         switch (Scoreboard.Instance.CurrentStage)
         {
             case StagingManager.StageEnum.Level1:
-                StartStage(1);
+                StartStage(2);
                 break;
             case StagingManager.StageEnum.Level2:
-                StartStage(2);
+                StartStage(4);
                 break;
             case StagingManager.StageEnum.Level3:
                 break;

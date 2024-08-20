@@ -20,7 +20,7 @@ MonoBehaviour:
   - Type: {fileID: 11400000, guid: 1e626f6e0e642b44aaeb77b6628c8be7, type: 2}
     Quantity: 40
     MaxDefectivePercentage: 25
-  TimeLimit: 240
+  TimeLimit: 270
   LevelMessage: We are pleased to announce that we have secured the capital for the
     expansion of E(tm) production.
   SuccessMessage: Great job!
