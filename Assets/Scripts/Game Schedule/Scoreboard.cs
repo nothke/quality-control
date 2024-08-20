@@ -35,6 +35,11 @@ public class Scoreboard: MonoBehaviour
         {
             Instance = this;
         }
+        
+        foreach (var stageProp in FindObjectsOfType<StageProp>(true))
+        {
+            stageProp.gameObject.SetActive(false);
+        }
     }
     
     public void StartStage(StagingManager.StageEnum stage)
