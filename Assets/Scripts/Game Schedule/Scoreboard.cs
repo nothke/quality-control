@@ -226,7 +226,7 @@ public class Scoreboard: MonoBehaviour
                 break;
             }
 
-            Debug.Log($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}");
+            sb.Append($"{quota.Type.name}: {TotalCount(quota.Type)}/{quota.Quantity}\n");
 
             if (quota.MaxDefectivePercentage < DefectPercentage(quota.Type))
             {

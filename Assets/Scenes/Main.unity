@@ -3006,7 +3006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6695070873418123376, guid: a3cb7267f99421c4b9912896d1eb7a41, type: 3}
       propertyPath: ProductionPhases.Array.data[1].TotalSpawnCount
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6695070873418123376, guid: a3cb7267f99421c4b9912896d1eb7a41, type: 3}
       propertyPath: ProductionPhases.Array.data[2].TotalSpawnCount
@@ -30668,7 +30668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1635000037
 Transform:
   m_ObjectHideFlags: 0
