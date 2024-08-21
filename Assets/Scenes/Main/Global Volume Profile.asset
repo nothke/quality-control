@@ -1,0 +1,215 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6867505736199328024
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd3a97acc7ef644da680b9eb611919e, type: 3}
+  m_Name: CathodeRayTubeVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  isEnabled:
+    m_OverrideState: 1
+    m_Value: 0
+  bloom:
+    m_OverrideState: 0
+    m_Value: 0.0625
+  grateMaskMode:
+    m_OverrideState: 1
+    m_Value: 0
+  grateMaskTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+    dimension: 1
+  grateMaskScale:
+    m_OverrideState: 0
+    m_Value: 1
+  scanlineSharpness:
+    m_OverrideState: 1
+    m_Value: 0.5
+  imageSharpness:
+    m_OverrideState: 0
+    m_Value: 0.5
+  bloomSharpnessX:
+    m_OverrideState: 0
+    m_Value: 0
+  bloomSharpnessY:
+    m_OverrideState: 0
+    m_Value: 0
+  noiseIntensity:
+    m_OverrideState: 0
+    m_Value: 0.1
+  noiseSaturation:
+    m_OverrideState: 0
+    m_Value: 1
+  grateMaskIntensityMin:
+    m_OverrideState: 0
+    m_Value: 0.25
+  grateMaskIntensityMax:
+    m_OverrideState: 0
+    m_Value: 0.75
+  barrelDistortionX:
+    m_OverrideState: 0
+    m_Value: 0.125
+  barrelDistortionY:
+    m_OverrideState: 0
+    m_Value: 0.33333334
+  vignette:
+    m_OverrideState: 0
+    m_Value: 0.5
+--- !u!114 &-4497889715984549295
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac4315c5d81c1274fb8120ba49e62c21, type: 3}
+  m_Name: LightingVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  lightingIsEnabled:
+    m_OverrideState: 1
+    m_Value: 1
+  bakedLightingMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  vertexColorLightingMultiplier:
+    m_OverrideState: 0
+    m_Value: 7.19
+  dynamicLightingMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+  dynamicLightsMaxCount:
+    m_OverrideState: 0
+    m_Value: 256
+  dynamicLightsMaxPerObjectCount:
+    m_OverrideState: 0
+    m_Value: 4
+--- !u!114 &-3111273404785686484
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bffa9ddd307306479a0e3689eb72441, type: 3}
+  m_Name: PrecisionVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  geometryEnabled:
+    m_OverrideState: 1
+    m_Value: 1
+  geometry:
+    m_OverrideState: 1
+    m_Value: 1
+  geometryPushbackEnabled:
+    m_OverrideState: 0
+    m_Value: 0
+  geometryPushbackMinMax:
+    m_OverrideState: 0
+    m_Value: {x: 0, y: 1}
+  color:
+    m_OverrideState: 1
+    m_Value: 0.527
+  chroma:
+    m_OverrideState: 0
+    m_Value: 0.412
+  alpha:
+    m_OverrideState: 0
+    m_Value: 1
+  affineTextureWarping:
+    m_OverrideState: 1
+    m_Value: 0.04
+  framebufferDither:
+    m_OverrideState: 0
+    m_Value: 1
+  ditherSize:
+    m_OverrideState: 0
+    m_Value: 1
+  drawDistanceFalloffMode:
+    m_OverrideState: 0
+    m_Value: 0
+  drawDistance:
+    m_OverrideState: 0
+    m_Value: 100
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
+  m_Name: Global Volume Profile
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 1785470334834173091}
+  - {fileID: 2147206562998114708}
+  - {fileID: -6867505736199328024}
+  - {fileID: -4497889715984549295}
+  - {fileID: -3111273404785686484}
+--- !u!114 &1785470334834173091
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb00c03fccc953a4387732e1392ffcf8, type: 3}
+  m_Name: CameraVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  isFrameLimitEnabled:
+    m_OverrideState: 0
+    m_Value: 0
+  frameLimit:
+    m_OverrideState: 0
+    m_Value: 24
+  aspectMode:
+    m_OverrideState: 0
+    m_Value: 3
+  targetRasterizationResolutionWidth:
+    m_OverrideState: 1
+    m_Value: 800
+  targetRasterizationResolutionHeight:
+    m_OverrideState: 1
+    m_Value: 600
+  isDepthBufferEnabled:
+    m_OverrideState: 0
+    m_Value: 1
+  isClearDepthAfterBackgroundEnabled:
+    m_OverrideState: 0
+    m_Value: 1
+  isClearDepthBeforeUIEnabled:
+    m_OverrideState: 0
+    m_Value: 1
+--- !u!114 &2147206562998114708
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f7b4b43d392da4aa0edc7aa47211ca, type: 3}
+  m_Name: QualityOverrideVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  isPSXQualityEnabled:
+    m_OverrideState: 1
+    m_Value: 1

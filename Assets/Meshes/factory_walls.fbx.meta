@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: hotspot_frames
+    second: {fileID: 2100000, guid: ccbaf21986c4ad74d8169e95555bdc7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hotspot_painted_metal
+    second: {fileID: 2100000, guid: 7b5afd79595121d44b0ce8cb6c3fadc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: hotspot_roof
     second: {fileID: 2100000, guid: 912d9758bfcc8ac48a6abcd6bd32d706, type: 2}
   - first:

@@ -3,7 +3,22 @@ guid: 502febc85e7a7344bbbc56858fb0800c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: conveyor_belt
+    second: {fileID: 2100000, guid: d7b5bba297a440d4f8af082ad999381d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hotspot_frames
+    second: {fileID: 2100000, guid: 4656c0cdb40496749b3b96e52e533510, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sample_hotspot
+    second: {fileID: 2100000, guid: a9233a2c81b418c4a85b20a1735a0e91, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

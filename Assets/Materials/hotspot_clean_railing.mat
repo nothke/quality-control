@@ -8,17 +8,23 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hotspot_clean_railing
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 055eab4e84dc70a47ae75b3125a22de6, type: 3}
   m_Parent: {fileID: 2100000, guid: 444ae9e382c89934da145b2ec3d025c5, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _METALLICGLOSSMAP
+  - _BRDF_MODE_LAMBERT
+  - _FOG_ON
+  - _LIGHTING_BAKED_ON
+  - _LIGHTING_DYNAMIC_ON
+  - _SHADING_EVALUATION_MODE_PER_VERTEX
+  - _TEXTURE_FILTER_MODE_TEXTURE_IMPORT_SETTINGS
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -28,4 +34,5 @@ Material:
     m_Floats: []
     m_Colors:
     - _Color: {r: 0.75157225, g: 0.9639378, b: 1, a: 1}
+    - _MainColor: {r: 0.56289303, g: 0.98619336, b: 1, a: 1}
   m_BuildTextureStacks: []

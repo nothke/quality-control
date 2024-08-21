@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.hauntedpsx.render-pipelines.psx": "https://github.com/pastasfuture/com.hauntedpsx.render-pipelines.psx.git",
     "com.unity.ide.rider": "3.0.31",
     "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.mathematics": "1.2.6",

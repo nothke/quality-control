@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.hauntedpsx.render-pipelines.psx": {
+      "version": "https://github.com/pastasfuture/com.hauntedpsx.render-pipelines.psx.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "7.3.1"
+      },
+      "hash": "c653dcef3e23eb73dab6744c2d77c4b7d4dd2228"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -40,6 +49,17 @@
         "com.unity.modules.physics": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.render-pipelines.core": {
+      "version": "14.0.11",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.terrain": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      }
     },
     "com.unity.test-framework": {
       "version": "1.1.33",

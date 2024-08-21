@@ -1269,6 +1269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4727985827101367565}
     m_Modifications:
+    - target: {fileID: 962711017265698665, guid: ce4446d7dfa691646b0cf7401874e9ba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 5707947010695767055, guid: ce4446d7dfa691646b0cf7401874e9ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1517,6 +1521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 515232485336291104}
     m_Modifications:
+    - target: {fileID: 2306570088766142265, guid: a14eef88ae1b588438a31162fce88ae1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 4327392801301995907, guid: a14eef88ae1b588438a31162fce88ae1, type: 3}
       propertyPath: m_Name
       value: crane_pillar_top (1)
@@ -1579,6 +1587,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8361960510235702639}
     m_Modifications:
+    - target: {fileID: 779052090433209643, guid: 146ff579bcab1a343bdcbf24e8b5e462, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 1459697740546535004, guid: 146ff579bcab1a343bdcbf24e8b5e462, type: 3}
       propertyPath: m_Name
       value: crane_magent
@@ -1992,6 +2004,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1788476256879462218, guid: 72b91bc7724565c4ab7ec4a4b1c52e4a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 2427631292558475660, guid: 72b91bc7724565c4ab7ec4a4b1c52e4a, type: 3}
       propertyPath: m_Name
       value: crane_pillar (1)
@@ -2282,6 +2298,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4467129685791536148, guid: 6de450877d355da4ea6654f6ce89c7ae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 4843321515000859519, guid: 6de450877d355da4ea6654f6ce89c7ae, type: 3}
       propertyPath: m_Name
       value: crane_cart
@@ -2329,6 +2349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crane_pillar_beam
       objectReference: {fileID: 0}
+    - target: {fileID: 5691379895695735662, guid: c18b1247792f95d46834b1092ac99b0d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 5919234391740965431, guid: c18b1247792f95d46834b1092ac99b0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -2576,6 +2600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8202374485105900957, guid: be29f5f73a00b62469d65e6a8ae39e16, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2749,6 +2777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1788476256879462218, guid: 72b91bc7724565c4ab7ec4a4b1c52e4a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 2427631292558475660, guid: 72b91bc7724565c4ab7ec4a4b1c52e4a, type: 3}
       propertyPath: m_Name
       value: crane_pillar
@@ -2916,6 +2948,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 515232485336291104}
     m_Modifications:
+    - target: {fileID: 2306570088766142265, guid: a14eef88ae1b588438a31162fce88ae1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 4327392801301995907, guid: a14eef88ae1b588438a31162fce88ae1, type: 3}
       propertyPath: m_Name
       value: crane_pillar_top
@@ -2978,6 +3014,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 515232485336291104}
     m_Modifications:
+    - target: {fileID: 3956258993021052495, guid: ac1e11ebd77f440429acc32d4ca99dfe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 7095740006694339546, guid: ac1e11ebd77f440429acc32d4ca99dfe, type: 3}
       propertyPath: m_Name
       value: crane_pillar_mid
@@ -3040,6 +3080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5508812383979352818}
     m_Modifications:
+    - target: {fileID: 962711017265698665, guid: ce4446d7dfa691646b0cf7401874e9ba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08174d2a06751904d94bab6b59573b34, type: 2}
     - target: {fileID: 5707947010695767055, guid: ce4446d7dfa691646b0cf7401874e9ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
