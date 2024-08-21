@@ -647,7 +647,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1866263028420156388, guid: 502febc85e7a7344bbbc56858fb0800c, type: 3}
+  - {fileID: 2100000, guid: 5616494cc33b4d547b09e59782fc616d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -813,7 +813,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1866263028420156388, guid: 502febc85e7a7344bbbc56858fb0800c, type: 3}
+  - {fileID: 2100000, guid: 5616494cc33b4d547b09e59782fc616d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1319,6 +1319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: conveyor_belt
       objectReference: {fileID: 0}
+    - target: {fileID: 5203169289822398637, guid: 77c4432b466fdea49b2742cc3018dd47, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5616494cc33b4d547b09e59782fc616d, type: 2}
     - target: {fileID: 5395015294641904379, guid: 77c4432b466fdea49b2742cc3018dd47, type: 3}
       propertyPath: m_LocalScale.x
       value: 1

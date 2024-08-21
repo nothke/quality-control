@@ -46,6 +46,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: conveyor_railing_pillar
       objectReference: {fileID: 0}
+    - target: {fileID: 5728027668822718419, guid: 775468d5a0856a24f87cb41c706c6abc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c62053db5f7afc4fa95df9413c85e37, type: 2}
     - target: {fileID: 7234652631474346767, guid: 775468d5a0856a24f87cb41c706c6abc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -137,6 +141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: conveyor_railing_pillar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5728027668822718419, guid: 775468d5a0856a24f87cb41c706c6abc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c62053db5f7afc4fa95df9413c85e37, type: 2}
     - target: {fileID: 7234652631474346767, guid: 775468d5a0856a24f87cb41c706c6abc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -268,6 +276,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7701324663523782232, guid: 576efc3d84535de48a69e62f1dddc2dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c62053db5f7afc4fa95df9413c85e37, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
